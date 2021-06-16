@@ -2,16 +2,14 @@ const axios = require("axios").default //para no tener que esta accediendo al de
 const { Router } = require('express');
 const { Pokemon, Types } = require("../db")
 const router = Router()
-
 /*
  [ ] GET /types:
 Obtener todos los tipos de pokemons posibles
 En una primera instancia deberán traerlos desde pokeapi y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
  */
-let flagUnaSolaRespuesta = true
-router.get("/types", async function (req, res) {
 
-    if (flagUnaSolaRespuesta) {
+router.get("/types", async function (req, res) {
+//
         let arrayPromises;
 
         await axios.get("https://pokeapi.co/api/v2/type").then(response => {
@@ -19,8 +17,8 @@ router.get("/types", async function (req, res) {
             arrayPromises = response.data.results.map(async function (e) {
                 let name = e.name
 
-                return Types.create({
-                    type: name
+                return Types.findOrCreate({
+                    where:{type: name}
                 }).catch(er => console.log("error en typesAxios!"))
 
             })
@@ -28,14 +26,6 @@ router.get("/types", async function (req, res) {
 
         await Promise.all(arrayPromises)
         res.json(await Types.findAll())
-        flagUnaSolaRespuesta=false
-    }
-
-    else res.send("Typos ya cargados")
-
-
-
-
 
 
 })

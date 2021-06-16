@@ -7,12 +7,13 @@ import { getMovies, addMovieFavorite } from "../../actions"//actions
 import './Paginado.css'; //hoja de estilos
 
 
-/*
-function ({}){
+/*function ({}){
+
 
     return()
     
     } 
+
 
 ///SOLO SI TIENE QUE LEER EL ESTADO
      function mapeoState(state) {
@@ -20,5 +21,5 @@ function ({}){
     }
   }
   
-export default connect(mapeoState, { actionAlgo <--SOLO SI TIENE QUE MODIFICAR EL ESTADO })();  
-*/
+  
+export default connect(mapeoState, { actionAlgo <--SOLO SI TIENE QUE MODIFICAR EL ESTADO })();  */

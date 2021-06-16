@@ -11,6 +11,9 @@ let buffer = {
 
 
 router.put("/", (req, res) => {
+
+console.log("|||||||||||")
+
     buffer = {
         pokemonBuffer: [],
         masPokemonesPorFavor: "https://pokeapi.co/api/v2/pokemon",
