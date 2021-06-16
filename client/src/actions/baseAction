@@ -1,0 +1,16 @@
+/* import {ACTION_ALGO} from "./names"
+
+export function actionAlgo (payload) {
+    
+    return {
+        type: ACTION_ALGO,
+        payload
+    }
+} 
+
+//ESTO EN ./names
+export const ACTION_ALGO = "ACTION_ALGO"
+
+
+
+*/

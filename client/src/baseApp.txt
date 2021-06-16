@@ -1,0 +1,31 @@
+import './App.css';
+import { Provider } from "react-redux";
+import store from "./store"
+import { Route } from "react-router-dom";
+import React from "react";
+import Componente from "./components/Componente/Componente";
+
+function App() {
+
+
+    return (
+
+    <Provider store={store}>
+      <React.Fragment>
+          <NavBar />
+          <Route exact path="/" component={Buscador} />
+          <Route path="/favs" component={Componente} />
+          
+        <Route exact path="/" >
+          <Busqueda />
+        </Route>
+
+      </React.Fragment>
+      </Provider>
+        
+  
+    )
+        
+}
+
+export default App;

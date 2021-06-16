@@ -1,0 +1,27 @@
+/*
+import { ACTION_ALGO } from "../actions/names"
+
+const initialState = {
+    algo:"algo"
+}
+
+
+function rootReducer(state = initialState, action) {
+
+let type=action.type
+let payload=action.payload
+
+    if (type === ACTION_ALGO) { 
+        return {
+            ...state, payload
+        }
+    }
+
+   
+}
+
+
+
+export default rootReducer;
+
+*/

@@ -1,21 +1,22 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+const morgan = require('morgan');//sirve para registro y seguimiento de solicitudes HTTP
 const routes = require('./routes/index.js');
 
 require('./db.js');
 
 const server = express();
 
-server.name = 'API';
+server.name = 'API'; 
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
+server.use(express.json({ limit: '50mb' }));
 server.use(cookieParser());
-server.use(morgan('dev'));
+server.use(morgan('dev'));//la version dev es para que de cierta info que me ayude
+
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); //**cambio** */ update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
