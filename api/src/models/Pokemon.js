@@ -9,11 +9,11 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Pokemon', { //ojo, esto es lo que pluraliza, no lo demas!
 
- idPokemonCreado:{
-  type: DataTypes.STRING,
-  allowNull: false,
-  primaryKey: true,
-}, 
+    idPokemonCreado: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+    },
 
     name: {
       type: DataTypes.STRING,

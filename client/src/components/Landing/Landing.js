@@ -11,11 +11,11 @@ async function refresh() {
     await axios.put("http://localhost:3001/pokemons").then((e) => {
         console.log("refresh de db exitoso")
     })
-//
+    //
 
     //CUANDO ESTOS DOS SE VALORIZAN, RECIEN AHI APARECE EL BOTON
     /////GET_TYPES/////
-     axios.get("http://localhost:3001/types").then((t) => {
+    axios.get("http://localhost:3001/types").then((t) => {
         console.log("get_types exitoso")
         store.dispatch(setTypes(t.data))//en data esta el objeto!!
     })
@@ -45,7 +45,7 @@ export default function () {
     return (
         <div>
             {/* <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/02/23/16140823976294.jpg" /> */}
-            <img src='https://i.imgur.com/045QeXT.jpg'/>
+            <img src='https://i.imgur.com/045QeXT.jpg' />
 
             <Link to="/principal">
                 <button>••••••• Principal •••••••</button>

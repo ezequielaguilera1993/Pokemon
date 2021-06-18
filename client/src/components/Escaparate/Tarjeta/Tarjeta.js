@@ -7,7 +7,7 @@ import './Tarjeta.css'; //hoja de estilos
 
 
 
-function Tarjeta({ setIdPk, name, types, imagen, fuerza, id }) {
+function Tarjeta({ setIdPk, name, types, imagen, fuerza, id, idPokemonCreado }) {
 
     return (
         <div>
@@ -15,10 +15,10 @@ function Tarjeta({ setIdPk, name, types, imagen, fuerza, id }) {
             <div>{types.join("  ")}</div>
             <div>{fuerza} </div>
             {
-                id
+                id||idPokemonCreado
                     ?
                     <Link to="/detalle">
-                        <img src={imagen} onClick={() =>  setIdPk(id) } />
+                        <img src={imagen} onClick={() => setIdPk(id)} />
                     </Link>
                     :
 

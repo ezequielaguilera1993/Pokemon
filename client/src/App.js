@@ -39,7 +39,7 @@ function App() {
 
         <Route path="/createPoke">
           <ToPrincipal />
-          {/*<Form/> */}
+          <Form/>
         </Route>
 
         <Route path="/detalle">

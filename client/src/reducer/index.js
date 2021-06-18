@@ -1,5 +1,6 @@
 // console.log("aca")//solo se imprime en cada F5
-import { SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "../actions/names"
+import { stat } from "fs"
+import { ADD_CREATED, SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "../actions/names"
 
 
 const initialState = {
@@ -20,6 +21,15 @@ function rootReducer(state = initialState, action) {
 
     let type = action.type
     let payload = action.payload
+
+    if (type === ADD_CREATED) {
+
+        let tmp= state.allPokes
+        tmp.unshift(payload)
+        return {
+            ...state, allPokes:tmp, toShowPokes:tmp
+        }
+    }
 
 
     if (type === SET_POKEDETALLE) {

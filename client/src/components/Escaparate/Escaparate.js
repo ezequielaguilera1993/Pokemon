@@ -12,9 +12,9 @@ function Escaparate({ toShowPokes, punteros}) { //
 
       {toShowPokes.slice(p1, p2).map((e) => {
 
-        const { name, types, imagen, fuerza, id } = e
+        const { name, types, imagen, fuerza, id , idPokemonCreado} = e
 
-        return <Tarjeta key={id} name={name} types={types} imagen={imagen} fuerza={fuerza} id={id} />
+        return <Tarjeta key={id} name={name} types={types} imagen={imagen} fuerza={fuerza} id={id} idPokemonCreado={idPokemonCreado}/>
 
       })}
 

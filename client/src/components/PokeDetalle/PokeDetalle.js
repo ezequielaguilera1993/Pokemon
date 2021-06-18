@@ -46,12 +46,12 @@ function PokeDetalle({ idPkPulsado, pokeDetalle, setPokeDetalle }) {
           let valor= e[1]
           return (
             clave === "id" ?
-              <div>Numero de Pokemon {">>"}  {valor}</div>
+              <div key={clave}>Numero de Pokemon {">>"}  {valor}</div>
               :
               clave==="imagen"?
-              <img src={valor}/>
+              <img key={clave} src={valor}/>
               :
-              <div>{clave[0].toUpperCase() + clave.slice(1)}  {">>"}   {valor}</div>
+              <div key={clave}>{clave[0].toUpperCase() + clave.slice(1)}  {">>"}   {valor}</div>
           )
 
 
