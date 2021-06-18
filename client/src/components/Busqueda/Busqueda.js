@@ -1,69 +1,88 @@
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
-import { Link } from 'react-router-dom';//si precise routing
-
-import { setPunteros } from "../../actions"
-
+import { process } from "../../actions"
 import './Busqueda.css'; //hoja de estilos
 
-console.log("inicio") //ESTO SE EJECUTA UNA SOLA VEZ, CUANDO TOCAS F5 !!! NO CUANDO VOLVES DE UNA RUTA!
+// { order:{fuerza:"menor_a_mayor"}, type:"grass", dbPokesOnly:true }
+// { order:{alfaB:"Z_A"}, type:"poison", dbPokesOnly:true }
+
+/* () => process({ order: { fuerza: "mayor_a_menor" } })
+() => process({ order: { fuerza: "menor_a_mayor" } })
+() => process({ order: { alfaB: "A_Z" } })
+() => process({ order: { alfaB: "Z_A" } }) */
+function Busqueda({ process, types, toShowPokes }) {
 
 
+    const [optionObj, setOptionObj] = useState({
+        order: "",
+        type: "",
+        dbPokesOnly: false,
+    })
 
-function Busqueda({ setPunteros, punteros }) {
 
-    //SE EJECUTA EN CADA CAMBIO DE ESTADO, Y CUANDO VOLVER DE OTRA RUTA TAMBIEN!!
-    
-//setPunteros()//si se le pasa payload diferentes, entra en michael bucle infinito! (Y DIFERENTES ES PASARLE DIFERENTES DATOS PRIMITIVOS O UN OBJETO CREADO DE NOVO -ES OTRA REFERENCIA- )
+    function handleProcess(e) {
+        let obj;
+        if (typeof e.target.checked === "boolean") obj = { ...optionObj, [e.target.name]: e.target.checked }
+        else  obj = { ...optionObj, [e.target.name]: e.target.value }
+        setOptionObj(obj)
 
-//setPunteros(obj), ademas, si modificas punteros uh otra cosa modifica punteros no tiene efecto porque se actualiza aca a cero!
+        process(obj)
 
-//Poniendo un obj arriba no cicla mas porque le pasa la referencia pero igual esta el problema de arriba. 
-
-console.log("francoEnComponenete")
-
+    }
 
 
     return (<div>
 
-<input type="checkbox" onClick={()=>setPunteros(10)}></input>
+        <div></div>
+        <div>ORDENAR</div>
+        <div><button name="order" value="mayor_a_menor" onClick={handleProcess}>Mas fuertes primero</button></div>
+        <div><button name="order" value="menor_a_mayor" onClick={handleProcess}>Débiles primero</button></div>
+        <div><button name="order" value="A_Z" onClick={handleProcess}>De la A a la Z</button></div>
+        <div><button name="order" value="Z_A" onClick={handleProcess}>De la Z a la A</button></div>
+        <div></div>
 
 
-        <Link to="/createPoke">
+        <div></div>
+        <div>FILTRAR</div>
 
-            <button onClick={()=>setPunteros([6,10])}>
-                createPoke {punteros}
-            </button>
+        <div>
+            <label> ♦ Por tipo </label>
 
-        </Link>
+            <select name="type" onChange={handleProcess}  >
+                {types.map(e => <option key={e.type}>{e.type}</option>)}
+            </select>
+        </div>
+ 
+        <div>
+            <label> ♦ Solo pokemons creados  </label>
+            <input name="dbPokesOnly" type="checkbox" onClick={handleProcess}
+            />
+        </div>
 
-        <Link to="/detalle">
-            <button >
-                Detalle {punteros}
-            </button>
-        </Link>
+        <div>
+        {
+        
+        <label> TOTAL A MOSTRAR: <strong>{toShowPokes.length} </strong>  
+        </label>
+        }
 
+
+        </div>
+
+
+      
     </div>
-
-    )
+    );
 }
 
-///SOLO SI TIENE QUE LEER EL ESTADO
-function mapeoToState(state) {
+function mapsState(state) {
+
     return {
-        punteros: state.punteros
+        types: state.types,
+        toShowPokes: state.toShowPokes
     }
+
 }
 
+export default connect(mapsState, { process })(Busqueda);
 
-export default connect(mapeoToState, { setPunteros })(Busqueda);
-
-
-
-/* function mapeoState(state) {
-    return {
-    }
-  }
-
-
-  export default connect(mapeoState, { , })(); */

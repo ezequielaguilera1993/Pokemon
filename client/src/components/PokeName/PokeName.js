@@ -1,25 +1,51 @@
+import axios from "axios";
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
-
-import { Link } from 'react-router-dom';//si precise routing
-import { getMovies, addMovieFavorite } from "../../actions"//actions
-
+import { busquedaPokename } from "../../actions"//actions
 import './PokeName.css'; //hoja de estilos
 
-/*
+function PokeName({ busquedaPokename }) {
 
-function ({}){
+  const [dato, setDato] = React.useState("")
 
-    return()
-
-    }
-
-///SOLO SI TIENE QUE LEER EL ESTADO
-     function mapeoState(state) {
-    return {
-    }
+  const handleChange = (e) => {
+    setDato(e.target.value)
   }
 
-export default connect(mapeoState, { actionAlgo <--SOLO SI TIENE QUE MODIFICAR EL ESTADO })();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-*/
+    let datoEnviado = dato
+    if (dato === "") { datoEnviado = "_" }
+
+    axios.get("http://localhost:3001/pokemons?pokeName=" + datoEnviado).then(
+
+      (res) => busquedaPokename(res.data)
+
+
+    )
+
+
+
+  }
+
+
+  return (
+
+    <div>
+
+      <form >
+        <input value={dato} onChange={handleChange} placeholder="Ingresar nombre de pokemon" name="busqueda" /> <button onClick={handleSubmit}>Buscar por nombre </button>
+      </form>
+
+
+    </div>
+
+  )
+
+}
+
+
+
+export default connect(null, { busquedaPokename })(PokeName);
+

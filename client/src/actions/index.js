@@ -1,4 +1,16 @@
-import { BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "./names"
+import { SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "./names"
+
+
+
+
+export function setPokeDetalle(payload) {
+
+    return {
+        type: SET_POKEDETALLE,
+        payload
+    }
+}
+
 
 export function busquedaPokename(payload) {
 
@@ -8,13 +20,14 @@ export function busquedaPokename(payload) {
     }
 }
 
-export function process (payload) {
- 
+export function process(payload) {
+
     return {
         type: PROCESS,
         payload
     }
 }
+
 
 export function setTypes(payload) {
 

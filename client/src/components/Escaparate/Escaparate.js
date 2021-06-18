@@ -1,27 +1,40 @@
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
-
-import { Link } from 'react-router-dom';//si precise routing
-import { getMovies, addMovieFavorite } from "../../actions"//actions
-
+import Tarjeta from "./Tarjeta/Tarjeta";
 import './Escaparate.css'; //hoja de estilos
 
 
-/*function ({}){
+function Escaparate({ toShowPokes, punteros}) { //
+  const [p1, p2] = punteros
+
+  return (
+    <div>
+
+      {toShowPokes.slice(p1, p2).map((e) => {
+
+        const { name, types, imagen, fuerza, id } = e
+
+        return <Tarjeta key={id} name={name} types={types} imagen={imagen} fuerza={fuerza} id={id} />
+
+      })}
 
 
-    return()
-    
-    } 
 
 
-///SOLO SI TIENE QUE LEER EL ESTADO
-     function mapeoState(state) {
-    return {
-    }
+
+
+    </div >
+  )
+
+}
+
+function mapeoState(state) {
+  return {
+    toShowPokes: state.toShowPokes,
+    punteros: state.punteros
   }
-  
-  
-export default connect(mapeoState, { actionAlgo <--SOLO SI TIENE QUE MODIFICAR EL ESTADO })();  */
+}
 
-  
+
+export default connect(mapeoState)(Escaparate);
+

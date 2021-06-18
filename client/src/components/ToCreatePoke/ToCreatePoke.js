@@ -1,16 +1,20 @@
 import React, { Component, useState } from "react";//esto
+import { Link } from 'react-router-dom';//si precise routing
+import './ToCreatePoke.css'; //hoja de estilos
+import { process, setPunteros } from "../../actions"//actions
 import { connect } from "react-redux";//y esto para conectarlo con redux
 
-import { Link } from 'react-router-dom';//si precise routing
-import { getMovies, addMovieFavorite } from "../../actions"//actions
+function ToCreatePoke() {
+    process({})
+    setPunteros([0, 6])
 
-import './ToCreatePoke.css'; //hoja de estilos
-
-
-
-/* function ({}){
+    return <Link to="/createPoke"><button>CreatePoke</button></Link>
 
 
-    return()
-    
-    } */
+}
+
+
+
+export default connect(null, { process, setPunteros })(ToCreatePoke);
+
+

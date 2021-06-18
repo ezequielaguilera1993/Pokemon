@@ -8,7 +8,7 @@ const fs = require('fs');//para buscar en carpetas
 const path = require('path');//el path para buscar
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
-} = process.env; //variables arbitrarias para acceder a la base de datos
+} = process.env; //variables arbitrarias para acceder a la base de dat
 
 
 //crea el sequelize

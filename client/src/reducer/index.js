@@ -1,19 +1,18 @@
 // console.log("aca")//solo se imprime en cada F5
-import { BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "../actions/names"
+import { SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "../actions/names"
 
 
 const initialState = {
-    idPkPulsado: 0,
+    idPkPulsado: 1,
     allPokes: [],
     toShowPokes: [],
     punteros: [0, 6],
     pokeName: {},
-    flagDbPokesOnly: false,
-    types: []
+    types: [],
+    pokeDetalle: {}
 }
 
 
-console.log(initialState)
 
 function rootReducer(state = initialState, action) {
 
@@ -22,35 +21,61 @@ function rootReducer(state = initialState, action) {
     let type = action.type
     let payload = action.payload
 
-    if (type === BUSQUEDA_POKENAME) {
+
+    if (type === SET_POKEDETALLE) {
         return {
-            ...state,
+            ...state, pokeDetalle: payload
         }
     }
 
-    if (type === PROCESS) { //PROCESA LOS ALLPOKES SEGUN CRITERIO Y GENERA TO_SHOW_POKES
-        //payload->{order:“fuerza”||“alfaB”, type:”elec”, dbPokesOnly:true}
 
-        let toShowPokes=state.allPokes;
+    if (type === BUSQUEDA_POKENAME) {
+        return {
+            ...state, toShowPokes: [payload]
+        }
+    }
+
+
+    if (type === PROCESS) { //PROCESA LOS ALLPOKES SEGUN CRITERIO Y GENERA TO_SHOW_POKES
+
+        let toShowPokes = [...state.allPokes];
 
         //FILTER
-        if (payload.type) {
-            toShowPokes = toShowPokes.filter(e => e.type === payload.type)
-        }
+        //TYPE
+        if (payload.type && payload.type !== "normal") {
+            console.log("type")
 
+            toShowPokes = toShowPokes.filter(e => e.types.includes(payload.type))
+
+        }
+        //DB_PK_ONLY
         if (payload.dbPokesOnly) {
-            toShowPokes = toShowPokes.filter(e => e.id.slice(0, 2) === "db")
+            console.log("pk_Only")
+
+            toShowPokes = toShowPokes.filter(e => typeof e.id !== "number")
         }
 
+        // { order:{fuerza:menor_a_mayor}, type:”elec”, dbPokesOnly:true }
+        // { order:{alfaB:Z_A}, type:”elec”, dbPokesOnly:true }
 
-        //ORDER
-        //POR FUERZA
-        if (payload.order === "fuerza") {
+        //ORDER////////////////////
+
+        //POR FUERZA///////////////////
+        if (payload.order === "menor_a_mayor") {
+            console.log("oreder fuerza menor a mayor")
             toShowPokes = toShowPokes.sort((a, b) => a.fuerza - b.fuerza)
+
+        }
+        if (payload.order === "mayor_a_menor") {
+            console.log("oreder fuerza mayot a menor")
+
+            toShowPokes = toShowPokes.sort((a, b) => b.fuerza - a.fuerza)
         }
 
-        //POR ALFAB
-        if (payload.order === "alfaB") {
+
+        //POR ALFAB//////////////////
+        if (payload.order === "A_Z") {
+            console.log('order alfaB AZ')
 
             toShowPokes = toShowPokes.sort((e1, e2) => {
                 var compare = false;
@@ -71,17 +96,40 @@ function rootReducer(state = initialState, action) {
             })
 
         }
+        //////////////////////
+        if (payload.order === "Z_A") {
+            console.log('order alfaB ZA')
+
+            toShowPokes = toShowPokes.sort((e1, e2) => {
+                var compare = false;
+                let count = 0;
+                while (!compare) {
+
+                    let pokeA = e1.name.toLowerCase().charCodeAt(count);
+                    let pokeB = e2.name.toLowerCase().charCodeAt(count);
+
+                    if (pokeA || pokeB) {
+                        compare = pokeB - pokeA;
+                        if (compare) return compare;
+                        else ++count;
+                    }
+                    else return 0
+
+                }
+            })
+
+        }
 
         return {
             ...state, toShowPokes: toShowPokes
         }
     }
 
-
-    if (type === ADD_POKEMONS) { 
+    //
+    if (type === ADD_POKEMONS) {
 
         return {
-            ...state, allPokes: payload
+            ...state, allPokes: state.allPokes.concat(payload), toShowPokes: state.toShowPokes.concat(payload)
         }
 
     }
@@ -92,17 +140,17 @@ function rootReducer(state = initialState, action) {
         }
     }
 
-  
+
 
     if (type === SET_PUNTEROS) {
         return {
-            ...state, punteros: payload
+            ...state, punteros: payload //recibe un array!!
         }
     }
 
     if (type === SET_ID_PK) {
         return {
-            ...state,
+            ...state, idPkPulsado: payload
         }
     }
 

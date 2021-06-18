@@ -14,7 +14,6 @@ var idPokemonCreados = 0
 //EN TABLAS DE MUCHISIMOS DATOS SE SUELEN USAR UUIDs
 
 router.post("/", async function (req, res) {
-
   //esto lo crea, sino te devuelve un array con los que encontro
   const pokemonFindOrCreated = await Pokemon.findOrCreate({
     //el create inserta el valor en la tabla, en category
@@ -29,20 +28,27 @@ router.post("/", async function (req, res) {
       defensa: 32,
       velocidad: 21,
       altura: 12,
-      peso: 12
+      peso: 12,
+      imagen: null
     }
   })
+
+  
 
   let flagCreate = pokemonFindOrCreated[1]/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
 
   const typeDeEstePokemon = await Types.findByPk(11)
-// console.log(typeDeEstePokemon,"aca");
 
   await pokemonFindOrCreated[0].setTypes(typeDeEstePokemon)
 
   if (flagCreate) {
-    Pokemon.findAll({ include: Types })
-      .then((result) => res.json({ cuantosHay: result.length, pokemonsCreados: result, db: idPokemonCreados }))
+    Pokemon.findAll({   include: Types })
+      .then((result) => {
+        const { idPokemonCreado, name, imagen, fuerza, Types} = result[0]
+        res.json({
+          cuantosHay: result.length, pokemonCreado: {idPokemonCreado,name, imagen, fuerza, types:Types[0].type}, db: idPokemonCreados
+        })
+      })
   }
   else res.status(404).send("Pokemon ya existente!!")
 

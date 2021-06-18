@@ -12,6 +12,7 @@ import PokeName from "./components/PokeName/PokeName";
 import ToCreatePoke from "./components/ToCreatePoke/ToCreatePoke";
 import ToPrincipal from "./components/ToPrincipal/ToPrincipal";
 import Landing from "./components/Landing/Landing";
+import Cargando from "./components/Cargando/Cargando";
 
 
 function App() {
@@ -21,31 +22,29 @@ function App() {
 
     <Provider store={store}>
       <React.Fragment>
-        <Route exact path="/"> {/*<==Landing*/} 
-          {/* <ToCreatePoke />
-          <PokeName /> */} 
-          <Landing/>
-          {/* <Escaparate />
-          <Paginado /> */}
+        <Route exact path="/"> {/*<==Landing*/}
+          <Landing />
+          <Cargando/>
+          
         </Route>
 
         <Route path="/principal">
-          {/* <ToCreatePoke />
-          <PokeName /> */}
+          <ToCreatePoke />
+          <Paginado/>   
+          <PokeName />
           <Busqueda />
-          {/* <Escaparate />
-          <Paginado /> */}
+          <Escaparate />
         </Route>
 
 
         <Route path="/createPoke">
-          <ToPrincipal/>
+          <ToPrincipal />
           {/*<Form/> */}
         </Route>
 
         <Route path="/detalle">
           <ToPrincipal />
-          {/* <PokeDetalle/> */}
+          <PokeDetalle/>
         </Route>
 
       </React.Fragment>

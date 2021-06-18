@@ -67,7 +67,7 @@ conn.sync({ force: true }).then(() => { //primero borra las tablas, y despues se
 
   server.listen(3001, () => { //en el 3000 va a correr react! EN EL 3001 CORRE EL BACK!
     console.log('%s listening at 3001'); // eslint-disable-line no-console
-
+ 
  
   });
 
