@@ -32,14 +32,10 @@ function PokeName({ busquedaPokename }) {
 
   return (
 
-    <div>
 
       <form >
-        <input value={dato} onChange={handleChange} placeholder="Ingresar nombre de pokemon" name="busqueda" /> <button onClick={handleSubmit}>Buscar por nombre </button>
+        <input value={dato} onChange={handleChange} placeholder="        Buscar por nombre" name="busqueda" /> <button onClick={handleSubmit}>Buscar por nombre </button>
       </form>
-
-
-    </div>
 
   )
 

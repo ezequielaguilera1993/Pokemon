@@ -59,13 +59,6 @@ export function setPunteros(payload) {
     }
 }
 
-export function setIdPk(payload) {
-
-    return {
-        type: SET_ID_PK,
-        payload
-    }
-}
 
 
 

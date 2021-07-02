@@ -48,11 +48,9 @@ router.get("/", async function (req, res) {
                     )
                     )
 
-
                 }
                 )
                 .catch(error => res.status(500).json({ error: "Ups! Pedido" }))
-
         }
         //
 
@@ -69,10 +67,11 @@ router.get("/", async function (req, res) {
             where: { name: pokeName }, include: Types
         })
 
+
         if (pokeDb.length !== 0) {
-
+            
             pokeDb = pokeDb[0].dataValues
-
+            
             res.json({
                 name: pokeDb.name,
                 types: pokeDb.Types.map((e) => e.type),
@@ -81,8 +80,20 @@ router.get("/", async function (req, res) {
                 id: pokeDb.idPokemonCreado
             })
         }
-
+        
         else {
+
+/* 
+            pokeName = await Pokemon.findOne({
+                where: {name},
+                include:{
+                        model: Type,
+                        attributes:['name']
+                        }
+                    }) */
+
+
+
             axios.get("https://pokeapi.co/api/v2/pokemon/" + pokeName)
 
                 .then(response => {

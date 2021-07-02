@@ -1,0 +1,90 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid rgb(255, 255, 255) */
+}
+
+.noVisible_Opacity {
+  opacity: 0;
+  transition: opacity 600ms
+}
+.Visible_Opacity {
+  opacity: 1;
+  transition: opacity 600ms, filter 500ms;
+}
+
+.containerImg {
+  width: 200px;
+}
+
+
+@keyframes latidosIngresar {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+#ingresar:hover {
+  filter: brightness(1.26);
+  transition: filter 500ms;
+  animation: latidosIngresar 3s infinite; 
+}
+#ingresar {
+  align-items: center;
+  display: flex;
+  width: 220px;
+
+}
+
+/* <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1079259202&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ezequiel-aguilera-177371189" title="Ezequiel Aguilera" target="_blank" style="color: #cccccc; text-decoration: none;">Ezequiel Aguilera</a> · <a href="https://soundcloud.com/ezequiel-aguilera-177371189/pikaa" title="pikaa" target="_blank" style="color: #cccccc; text-decoration: none;">pikaa</a></div> */
+
+
+
+
+
+/* Animación con keyframe llamada "latidos" */
+@keyframes latidosLoading {
+  from {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(0.6);
+
+  }
+}
+/* En la clase corazon vamos a llamar latidos en la animación  */
+#loading {
+  position: relative;
+  z-index: -1;
+  border-radius: 50%;
+  width: 100px;
+  margin-top: 100px;
+  display: inline-block;
+  font-size: 150px;
+  text-shadow: 0 0 10px #222, 1px 1px 0 #450505;
+  color: red;
+   animation: latidosLoading 1s infinite; 
+  transform-origin: center;
+}
+
+
+@keyframes latidosCartel {
+  from {
+    transform: scale(10);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+#cartelPokemon {
+  animation: latidosCartel 0.6s forwards;
+}

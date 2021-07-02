@@ -2,6 +2,65 @@
   text-align: center;
 }
 
+html{
+
+}
+body {
+  margin: 0;
+  font-family: "Bad Script", cursive;
+  font-family: "Gochi Hand", cursive;
+  color: #e9e6e6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+display: flex;
+
+align-items: center;
+flex-direction: column-reverse;
+font-size: larger;
+
+
+}
+
+*{
+cursor:url(https://i.imgur.com/CpdoEln.png), auto;
+
+/* border: 1px solid rgb(21, 255, 0) */
+
+}
+
+button {
+  font-family: "Bad Script", cursive;
+  font-family: "Gochi Hand", cursive;
+  color: #201d1d;
+  border-radius: 3px;
+  font-size: larger;
+  background-color: rgb(211, 211, 211);
+  transition: background-color 300ms;
+
+}
+button:hover{
+  background-color: rgb(255, 255, 255);
+    transition: background-color 500ms;
+}
+
+select {
+  font-family: "Bad Script", cursive;
+  font-family: "Gochi Hand", cursive;
+  color: #201d1d;
+  border-radius: 10px;
+  font-size: larger;
+
+}
+
+input {
+  font-family: "Bad Script", cursive;
+  font-family: "Gochi Hand", cursive;
+  color: #201d1d;
+  border-radius: 7px;
+  font-size: larger;
+
+}
 
 .App-logo {
   height: 40vmin;

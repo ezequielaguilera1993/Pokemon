@@ -1,24 +1,23 @@
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
-import { setIdPk } from "../../../actions"//actions
 import { Link } from 'react-router-dom';//si precise routing
 
 import './Tarjeta.css'; //hoja de estilos
 
 
 
-function Tarjeta({ setIdPk, name, types, imagen, fuerza, id, idPokemonCreado }) {
+function Tarjeta({ name, types, imagen, fuerza, id, idPokemonCreado }) {
 
     return (
-        <div>
-            <div>{name}</div>
+        <div id="tarjeta">
+            <div>{name[0].toUpperCase()+name.slice(1)}</div>
             <div>{types.join("  ")}</div>
             <div>{fuerza} </div>
             {
                 id||idPokemonCreado
                     ?
-                    <Link to="/detalle">
-                        <img src={imagen} onClick={() => setIdPk(id)} />
+                    <Link to={"/detalle/"+id}>
+                        <img src={imagen}/>
                     </Link>
                     :
 
@@ -34,4 +33,4 @@ function Tarjeta({ setIdPk, name, types, imagen, fuerza, id, idPokemonCreado }) 
 }
 
 
-export default connect(null, { setIdPk })(Tarjeta);
+export default connect(null)(Tarjeta);

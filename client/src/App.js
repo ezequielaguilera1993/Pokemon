@@ -2,7 +2,7 @@ import './App.css';
 import { Provider } from "react-redux";
 import store from "./store"
 import { Route } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import Busqueda from "./components/Busqueda/Busqueda";
 import Escaparate from "./components/Escaparate/Escaparate";
 import Form from "./components/Form/Form";
@@ -12,7 +12,7 @@ import PokeName from "./components/PokeName/PokeName";
 import ToCreatePoke from "./components/ToCreatePoke/ToCreatePoke";
 import ToPrincipal from "./components/ToPrincipal/ToPrincipal";
 import Landing from "./components/Landing/Landing";
-import Cargando from "./components/Cargando/Cargando";
+import { render } from 'react-dom';
 
 
 function App() {
@@ -24,28 +24,39 @@ function App() {
       <React.Fragment>
         <Route exact path="/"> {/*<==Landing*/}
           <Landing />
-          <Cargando/>
-          
         </Route>
 
-        <Route path="/principal">
-          <ToCreatePoke />
-          <Paginado/>   
-          <PokeName />
-          <Busqueda />
-          <Escaparate />
+        <Route path="/principal" >
+          <div >
+            <ToCreatePoke />
+            <Paginado />
+            <PokeName />
+            <Busqueda />
+            <Escaparate />
+            <Paginado />
+
+           
+          </div>
         </Route>
 
 
         <Route path="/createPoke">
           <ToPrincipal />
-          <Form/>
+          <Form />
         </Route>
 
-        <Route path="/detalle">
-          <ToPrincipal />
-          <PokeDetalle/>
-        </Route>
+        <Route path="/detalle/:idPokemon"
+          render={({ match }) => {
+
+            return (
+              <>
+                <ToPrincipal />
+                <PokeDetalle match={match} />
+              </>
+            )
+
+          }}
+        />
 
       </React.Fragment>
 

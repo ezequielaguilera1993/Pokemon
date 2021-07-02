@@ -4,7 +4,6 @@ import { ADD_CREATED, SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, AD
 
 
 const initialState = {
-    idPkPulsado: 1,
     allPokes: [],
     toShowPokes: [],
     punteros: [0, 6],
@@ -56,8 +55,8 @@ function rootReducer(state = initialState, action) {
             console.log("type")
 
             toShowPokes = toShowPokes.filter(e => e.types.includes(payload.type))
-
         }
+        
         //DB_PK_ONLY
         if (payload.dbPokesOnly) {
             console.log("pk_Only")
@@ -155,12 +154,6 @@ function rootReducer(state = initialState, action) {
     if (type === SET_PUNTEROS) {
         return {
             ...state, punteros: payload //recibe un array!!
-        }
-    }
-
-    if (type === SET_ID_PK) {
-        return {
-            ...state, idPkPulsado: payload
         }
     }
 

@@ -1,0 +1,21 @@
+#tarjeta{
+
+margin-left: 14px;
+margin-right: 14px;
+margin-top: 14px;
+background-color: rgba(250, 240, 230, 0.24);
+border-radius: 40px;
+display:block;
+transition: background-color 700ms;
+font-size: 30px;
+color: rgb(12, 11, 11);
+
+}
+
+#tarjeta:hover{
+
+    background-color: rgba(255, 255, 255, 0.63);
+    transition: background-color 700ms;
+
+
+}

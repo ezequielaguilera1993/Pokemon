@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
+import { useParams } from "react-router-dom";
 import { addMovieFavorite, setPokeDetalle } from "../../actions"//actions
 import './PokeDetalle.css'; //hoja de estilos
 const axios = require("axios").default //para no tener que esta accediendo al default tood el tiempo
@@ -11,15 +12,16 @@ const axios = require("axios").default //para no tener que esta accediendo al de
 [ ] Estadísticas (vida, fuerza, defensa, velocidad)
 [ ] Altura y peso 
 */
-function PokeDetalle({ idPkPulsado, pokeDetalle, setPokeDetalle }) {
+
+function PokeDetalle({pokeDetalle, setPokeDetalle, match }) {
+
+  let idPokemon = match.params.idPokemon
 
   useEffect(() => {
-    axios.get("http://localhost:3001/pokemons/" + idPkPulsado).then((res) => {
+    axios.get("http://localhost:3001/pokemons/" + idPokemon).then((res) => {
       setPokeDetalle(res.data)
     })
   }, [])
-
-
 
 
   let a = {
@@ -39,19 +41,26 @@ function PokeDetalle({ idPkPulsado, pokeDetalle, setPokeDetalle }) {
   }
 
   return (
-    <div>
+    <div id="detalle">
+      <div>{idPokemon}</div>
       {
         Object.entries(pokeDetalle).map((e) => {
           let clave = e[0]
-          let valor= e[1]
+          let valor = e[1]
           return (
             clave === "id" ?
-              <div key={clave}>Numero de Pokemon {">>"}  {valor}</div>
+              <div key="id">{"✨"}Numero de Pokemon{"✨"} <br /> {valor}<br /> <br /> </div>
               :
-              clave==="imagen"?
-              <img key={clave} src={valor}/>
-              :
-              <div key={clave}>{clave[0].toUpperCase() + clave.slice(1)}  {">>"}   {valor}</div>
+              clave === "idPokemonCreado" ?
+                <div key="id">{"✨"}Numero de Pokemon{"✨"}<br />{valor} (pokemon creado)  <br /><br /></div>
+                :
+                clave === "imagen" ?
+                  <img key={clave} src={valor} />
+                  :
+                  clave === "types" ?
+                    <div key={clave}> {"✨"}{clave}{"✨"}<br /> {valor.join(" ")} <br /><br /></div>
+                    :
+                    <div key={clave}>{"✨"}{clave[0].toUpperCase() + clave.slice(1)}{"✨"} <br />  {valor}<br /><br /></div>
           )
 
 
@@ -67,11 +76,10 @@ function PokeDetalle({ idPkPulsado, pokeDetalle, setPokeDetalle }) {
 function mapeoState(state) {
 
   return {
-    idPkPulsado: state.idPkPulsado,
     pokeDetalle: state.pokeDetalle
   }
 
 }
 
 
-export default connect(mapeoState, { setPokeDetalle })(PokeDetalle);
+export default connect(mapeoState, { setPokeDetalle })(PokeDetalle)
