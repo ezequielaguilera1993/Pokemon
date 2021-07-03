@@ -53,7 +53,7 @@ La SPA consume un api externa (https://pokeapi.co/) agregandole funcionalidades 
 <br/>
 
 # DataBase
-#### Las bases de datos son elementos que se encargar de la persistencia de los datos. Si un usuario se registra y reinicia su computadora en algun lugar, en algun lugar quedara guardada su contraseña y userName, ese lugar es una base de datos.
+#### Las bases de datos son elementos que se encargar de la persistencia de los datos. Si un usuario se registra y reinicia su computadora. Su contraseña y username quedaran guardadas en algun lugar, ese lugar es una base de datos.
 ##### Tecnologias usadas
 <img src="https://raw.githubusercontent.com/uannabi/-/fb6275d5134eb27df390835d330e221c72a47ee4/resource/other/postgresql-ar21.svg" alt="drawing" width="10%"/> <img src="https://bestofjs.org/logos/sequelize.svg" alt="drawing" width="5%"/> 
  
