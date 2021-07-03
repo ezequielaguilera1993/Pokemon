@@ -1,162 +1,336 @@
-<p align='left'>
-    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
-</p>
+### Pokemon SPA (Single Page Aplication)
 
-# Individual Project - Henry Pokemon
 
-<p align="left">
-  <img height="150" src="./pokemon.png" />
-</p>
 
-## Objetivos del Proyecto
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
 
-## Horarios y Fechas
+![](https://i.pinimg.com/236x/d0/35/53/d03553eeb5d7b6b5e951b80f73808098.jpg)  **Hola! he digo, pika⚡**
 
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
+------------
 
-## Comenzando
 
- 1. Se debe iniciar git con `git init`
- 2. Crear en su cuenta de GitHub un nuevo repo con el nombre `PI-Pokemon-FT__` donde `__` es el numero de cohorte en el que estas
- 3. Hacer un commit inicial ej: `git add .` => `git commit -m "init"` => `git branch -M main`
- 4. Seguir las instrucciones de GitHub para 'conectar' su repositorio local con GitHub `git remote add........`
- 5. Hacer push de ese commit `git push -u origin main`
- 6. No olvidar que deben regularmente hacer commit y push para mantener el repo actualizado en la nube
 
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
+**Table of Contents**
 
-__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
+[TOCM]
 
-## BoilerPlate
+#Resumen de la web
+**• Experiencia del usuario**
+Se puede ver un listado de pokemons, buscar alguno en específico, ordenarlos, filtrarlos, acceder a ver mas detalles y crear pokemons nuevos.
 
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
+**• Tecnologías usadas**
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="drawing" width="7%"/> <img src="https://redux.js.org/img/redux.svg" alt="drawing" width="6%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="drawing" width="5%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="drawing" width="8.5%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="drawing" width="10%"/> <img src="https://raw.githubusercontent.com/uannabi/-/fb6275d5134eb27df390835d330e221c72a47ee4/resource/other/postgresql-ar21.svg" alt="drawing" width="10%"/> <img src="https://bestofjs.org/logos/sequelize.svg" alt="drawing" width="5%"/> <img src="https://raw.githubusercontent.com/uannabi/-/fb6275d5134eb27df390835d330e221c72a47ee4/resource/git.svg" alt="drawing" width="10%"/>
+*React, Redux, CSS, NodeJs, Express, PostgreSQL, Sequelize, GitHub*
 
-En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
 
+
+**• Captura**
+![](https://i.imgur.com/ceORcli.jpg)
+
+------------
+
+
+#Front End
+####El Front End es la parte del desarrollo web que se encarga de crear la interfaz del usuario 
+#####Tecnologias usadas
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="drawing" width="7%"/> <img src="https://redux.js.org/img/redux.svg" alt="drawing" width="6%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="drawing" width="5%"/>
+*React, Redux, CSS*
+Se utilizó React para maquetar los componentes y Redux para manejar estados globales.
+Todos los componentes fueron estilizados utilizando CSS puro (sin librerías de terceros)
+
+#Back End
+####El Front End es la parte del desarrollo web que se encarga de crear la interfaz del usuario 
+#####Tecnologias usadas
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="drawing" width="7%"/> <img src="https://redux.js.org/img/redux.svg" alt="drawing" width="6%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="drawing" width="5%"/>
+*React, Redux, CSS*
+Se utilizó React para maquetar los componentes y Redux para manejar estados globales.
+Todos los componentes fueron estilizados utilizando CSS puro (sin librerías de terceros)
+
+
+#DataBase
+####El Front End es la parte del desarrollo web que se encarga de crear la interfaz del usuario 
+#####Tecnologias usadas
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="drawing" width="7%"/> <img src="https://redux.js.org/img/redux.svg" alt="drawing" width="6%"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="drawing" width="5%"/>
+*React, Redux, CSS*
+Se utilizó React para maquetar los componentes y Redux para manejar estados globales.
+Todos los componentes fueron estilizados utilizando CSS puro (sin librerías de terceros)
+
+H1 Header (Underline)
+=============
+
+H2 Header (Underline)
+-------------
+
+###Characters
+                
+----
+
+~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
+*Italic*      _Italic_
+**Emphasis**  __Emphasis__
+***Emphasis Italic*** ___Emphasis Italic___
+
+Superscript: X<sub>2</sub>，Subscript: O<sup>2</sup>
+
+**Abbreviation(link HTML abbr tag)**
+
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
+
+###Blockquotes
+
+> Blockquotes
+
+Paragraphs and Line Breaks
+                    
+> "Blockquotes Blockquotes", [Link](http://localhost/)。
+
+###Links
+
+[Links](http://localhost/)
+
+[Links with title](http://localhost/ "link title")
+
+`<link>` : <https://github.com>
+
+[Reference link][id/name] 
+
+[id/name]: http://link-url/
+
+GFM a-tail link @pandao
+
+###Code Blocks (multi-language) & highlighting
+
+####Inline code
+
+`$ npm install marked`
+
+####Code Blocks (Indented style)
+
+Indented 4 spaces, like `<pre>` (Preformatted Text).
+
+    <?php
+        echo "Hello world!";
+    ?>
+    
+Code Blocks (Preformatted text):
+
+    | First Header  | Second Header |
+    | ------------- | ------------- |
+    | Content Cell  | Content Cell  |
+    | Content Cell  | Content Cell  |
+
+####Javascript　
+
+```javascript
+function test(){
+	console.log("Hello world!");
+}
+ 
+(function(){
+    var box = function(){
+        return box.fn.init();
+    };
+
+    box.prototype = box.fn = {
+        init : function(){
+            console.log('box.init()');
+
+			return this;
+        },
+
+		add : function(str){
+			alert("add", str);
+
+			return this;
+		},
+
+		remove : function(str){
+			alert("remove", str);
+
+			return this;
+		}
+    };
+    
+    box.fn.init.prototype = box.fn;
+    
+    window.box =box;
+})();
+
+var testBox = box();
+testBox.add("jQuery").remove("jQuery");
 ```
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
-DB_HOST=localhost
+
+####HTML code
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Hello world!</title>
+    </head>
+    <body>
+        <h1>Hello world!</h1>
+    </body>
+</html>
 ```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+###Images
 
-Adicionalmente será necesario que creen desde psql una base de datos llamada `pokemon`
+Image:
 
-El contenido de `client` fue creado usando: Create React App.
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
-## Enunciado
+> Follow your heart.
 
-La idea general es crear una aplicación en la cual se puedan ver los distintos Pokemon utilizando la api externa [pokeapi](https://pokeapi.co/) y a partir de ella poder, entre otras cosas:
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
 
-  - Buscar pokemons
-  - Filtrarlos / Ordenarlos
-  - Crear nuevos pokemons
+> 图为：厦门白城沙滩 Xiamen
 
-__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
+图片加链接 (Image + Link)：
 
-### Únicos Endpoints/Flags que pueden utilizar
+[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "李健首张专辑《似水流年》封面")
 
-  - GET https://pokeapi.co/api/v2/pokemon
-  - GET https://pokeapi.co/api/v2/pokemon/{id}
-  - GET https://pokeapi.co/api/v2/pokemon/{name}
-  - GET https://pokeapi.co/api/v2/type
+> 图为：李健首张专辑《似水流年》封面
+                
+----
 
-### Requerimientos mínimos:
+###Lists
 
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
+####Unordered list (-)
 
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
+- Item A
+- Item B
+- Item C
+     
+####Unordered list (*)
 
-#### Tecnologías necesarias:
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
+* Item A
+* Item B
+* Item C
 
-#### Frontend
+####Unordered list (plus sign and nested)
+                
++ Item A
++ Item B
+    + Item B 1
+    + Item B 2
+    + Item B 3
++ Item C
+    * Item C 1
+    * Item C 2
+    * Item C 3
 
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
+####Ordered list
+                
+1. Item A
+2. Item B
+3. Item C
+                
+----
+                    
+###Tables
+                    
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
 
-__Pagina inicial__: deben armar una landing page con
-- [ ] Alguna imagen de fondo representativa al proyecto
-- [ ] Botón para ingresar al home (`Ruta principal`)
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
-__Ruta principal__: debe contener
-- [ ] Input de búsqueda para encontrar pokemons por nombre (La búsqueda será exacta, es decir solo encontrará al pokemon si se coloca el nombre completo)
-- [ ] Área donde se verá el listado de pokemons. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /pokemons` y deberá mostrar su:
-  - Imagen
-  - Nombre
-  - Tipos (Electrico, Fuego, Agua, etc)
-- [ ] Botones/Opciones para filtrar por tipo de pokemon y por pokemon existente o creado por nosotros
-- [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los pokemons por orden alfabético y por fuerza
-- [ ] Paginado para ir buscando y mostrando los siguientes pokemons
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
 
-__IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto los pokemons traidos desde la API como así también las de la base de datos. Por otro lado, si revisan el endpoint que trae todos los pokemons verán que no muestra la información del pokemon sino una URL para hacer un subrequest y obtener los datos de allí. Tendrán que por cada pokemon que van a mostrar hacer otro request a esa URL para obtener su imagen y tipos. Debido a que esto puede hacer que la búsqueda sea muy lenta limitar el resultado total a 40 pokemons totales.
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
 
-__Ruta de detalle de Pokemon__: debe contener
-- [ ] Los campos mostrados en la ruta principal para cada pokemon (imagen, nombre y tipos)
-- [ ] Número de Pokemon (id)
-- [ ] Estadísticas (vida, fuerza, defensa, velocidad)
-- [ ] Altura y peso
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+                
+----
 
-__Ruta de creación__: debe contener
-- [ ] Un formulario __controlado__ con los campos mencionados en el detalle del pokemon
-- [ ] Posibilidad de seleccionar/agregar más de un tipo de pokemon
-- [ ] Botón/Opción para crear un nuevo pokemon
+####HTML entities
 
-#### Base de datos
+&copy; &  &uml; &trade; &iexcl; &pound;
+&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
 
-El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
+X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
 
-- [ ] Pokemon con las siguientes propiedades:
-  - ID (Número de Pokemon) * : No puede ser un ID de un pokemon ya existente en la API pokeapi
-  - Nombre *
-  - Vida
-  - Fuerza
-  - Defensa
-  - Velocidad
-  - Altura
-  - Peso
-- [ ] Tipo con las siguientes propiedades:
-  - ID
-  - Nombre
+18&ordm;C  &quot;  &apos;
 
-La relación entre ambas entidades debe ser de muchos a muchos ya que un pokemon puede pertenecer a más de un tipo y, a su vez, un tipo puede incluir a muchos pokemons.
+##Escaping for Special Characters
 
-__IMPORTANTE__: Pensar como modelar los IDs de los pokemons en la base de datos. Existen distintas formas correctas de hacerlo pero tener en cuenta que cuando hagamos click en alguno, este puede provenir de la API o de la Base de Datos por lo que cuando muestre su detalle no debería haber ambigüedad en cual se debería mostrar. Por ejemplo si en la API el pokemon `Bulbasaur` tiene id = 1 y en nuestra base de datos creamos un nuevo pokemon `Henry` con id = 1, ver la forma de diferenciarlos cuando querramos acceder al detalle del mismo.
+\*literal asterisks\*
 
-#### Backend
+##Markdown extras
 
-Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
+###GFM task list
 
-__IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
 
-- [ ] __GET /pokemons__:
-  - Obtener un listado de los primeros 12 pokemons desde pokeapi
-  - Debe devolver solo los datos necesarios para la ruta principal
-- [ ] __GET /pokemons/{idPokemon}__:
-  - Obtener el detalle de un pokemon en particular
-  - Debe traer solo los datos pedidos en la ruta de detalle de pokemon
-  - Tener en cuenta que tiene que funcionar tanto para un id de un pokemon existente en pokeapi o uno creado por ustedes
-- [ ] __GET /pokemons?name="..."__:
-  - Obtener el pokemon que coincida exactamente con el nombre pasado como query parameter (Puede ser de pokeapi o creado por nosotros)
-  - Si no existe ningún pokemon mostrar un mensaje adecuado
-- [ ] __POST /pokemons__:
-  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de pokemons por body
-  - Crea un pokemon en la base de datos
-- [ ] __GET /types__:
-  - Obtener todos los tipos de pokemons posibles
-  - En una primera instancia deberán traerlos desde pokeapi y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
+###Emoji mixed :smiley:
 
+> Blockquotes :star:
 
-#### Testing
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+####GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
+
+- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
+- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
+- [x] [ ] :smiley: this is a complete item :smiley:;
+- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
+- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
+    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
+    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
+            
+###TeX(LaTeX)
+   
+$$E=mc^2$$
+
+Inline $$E=mc^2$$ Inline，Inline $$E=mc^2$$ Inline。
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+                    
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
+                
+###FlowChart
+
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
+###Sequence Diagram
+                    
+```seq
+Andrew->China: Says Hello 
+Note right of China: China thinks\nabout it 
+China-->Andrew: How are you? 
+Andrew->>China: I am good thanks!
+```
+
+###End
