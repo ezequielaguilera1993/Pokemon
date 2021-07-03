@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
 import { addCreated, } from "../../actions"//actions
-import './Form.css'; //hoja de estilos
+import styles from './Form.module.css'; //hoja de estilos
+import {capitalCase} from "../../util";
 
 export function validate(input) {
   let errors = {
@@ -149,21 +150,21 @@ function Form({ addCreated, types }) {
   return (
     <div>
       <form>
-        <div>  <strong>Nombre</strong>    <input className={errors.name?"require":""} value={pokedata.name} onChange={handleOnChange} name="name" placeholder="Nombre" /></div>
-        <div>  <strong>Vida</strong>    <input className={errors.vida?"require":""} value={pokedata.vida} onChange={handleOnChange} name="vida" placeholder="Vida" /></div>
-        <div>  <strong>Fuerza</strong>    <input className={errors.fuerza?"require":""} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" placeholder="Fuerza" /></div>
-        <div>  <strong>Defensa</strong>    <input className={errors.defensa?"require":""} value={pokedata.defensa} onChange={handleOnChange} name="defensa" placeholder="Defensa" /></div>
-        <div>  <strong>Velocidad</strong>    <input className={errors.velocidad?"require":""} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" placeholder="Velocidad" /></div>
-        <div>  <strong>Altura</strong>    <input className={errors.altura?"require":""} value={pokedata.altura} onChange={handleOnChange} name="altura" placeholder="Altura" /></div>
-        <div>  <strong>Peso</strong>    <input className={errors.peso?"require":""} value={pokedata.peso} onChange={handleOnChange} name="peso" placeholder="Peso" /></div>
-        <div>  <strong>Imagen</strong>    <input className={errors.imagen?"require":""} value={pokedata.imagen} onChange={handleOnChange} name="imagen" placeholder="Imagen" /></div>
+        <div>  <strong>Nombre</strong>    <input className={errors.name?styles.require:styles.allOk} value={pokedata.name} onChange={handleOnChange} name="name" placeholder="Nombre" /></div>
+        <div>  <strong>Vida</strong>    <input className={errors.vida?styles.require:styles.allOk} value={pokedata.vida} onChange={handleOnChange} name="vida" placeholder="Vida" /></div>
+        <div>  <strong>Fuerza</strong>    <input className={errors.fuerza?styles.require:styles.allOk} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" placeholder="Fuerza" /></div>
+        <div>  <strong>Defensa</strong>    <input className={errors.defensa?styles.require:styles.allOk} value={pokedata.defensa} onChange={handleOnChange} name="defensa" placeholder="Defensa" /></div>
+        <div>  <strong>Velocidad</strong>    <input className={errors.velocidad?styles.require:styles.allOk} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" placeholder="Velocidad" /></div>
+        <div>  <strong>Altura</strong>    <input className={errors.altura?styles.require:styles.allOk} value={pokedata.altura} onChange={handleOnChange} name="altura" placeholder="Altura" /></div>
+        <div>  <strong>Peso</strong>    <input className={errors.peso?styles.require:styles.allOk} value={pokedata.peso} onChange={handleOnChange} name="peso" placeholder="Peso" /></div>
+        <div>  <strong>Imagen</strong>    <input className={errors.imagen?styles.require:styles.allOk} value={pokedata.imagen} onChange={handleOnChange} name="imagen" placeholder="Imagen" /></div>
 
+<div id={styles.typesList}>
         {
-
           types.map(e =>
 
             <div key={e.type}>
-              <label>{e.type}</label>
+              <label>{capitalCase(e.type)}</label>
 
 
               <input checked={
@@ -180,8 +181,8 @@ function Form({ addCreated, types }) {
           )
 
         }
-
-        <button clasename={Object.keys(errors)>0?"butonError":""} onClick={handleSubmit}>Crear Pokemon!</button> {Object.keys(errors)>0?<label>Formulario con campos vacios!</label>:""} 
+</div>
+        <button clasename={Object.keys(errors)>0?"butonError":""} onClick={handleSubmit}>CREAR 💌</button> {Object.keys(errors)>0?<label>Formulario con campos vacios!</label>:""} 
       </form>
     </div>
 

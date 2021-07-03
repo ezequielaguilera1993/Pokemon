@@ -1,0 +1,14 @@
+#escaparate {
+  background-color: rgba(144, 238, 144, 0.39);
+  border-radius: 40px;
+  
+}
+
+#toShowPokes{
+  width: 1000px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26.00%, 1fr));
+  grid-gap: 0%;
+
+}

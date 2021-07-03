@@ -1,4 +1,3 @@
-
 code {
 }
 
@@ -20,4 +19,11 @@ p.danger {
 }
 input.danger {
   border: 2px solid red;
+}
+
+#typesList {
+  margin: 20px 0 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26%, 1fr));
+  grid-gap: 0%;
 }

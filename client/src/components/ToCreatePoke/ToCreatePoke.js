@@ -8,7 +8,7 @@ function ToCreatePoke() {
     process({})
     setPunteros([0, 6])
 
-    return <Link to="/createPoke"><button>CreatePoke</button></Link>
+    return <Link to="/createPoke"><button>Crear Pokémon!</button></Link>
 
 
 }

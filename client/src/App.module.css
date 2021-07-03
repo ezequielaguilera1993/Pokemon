@@ -5,6 +5,13 @@
 html{
 
 }
+
+
+#principalCommands{
+
+
+}
+
 body {
   margin: 0;
   font-family: "Bad Script", cursive;
@@ -24,6 +31,7 @@ font-size: larger;
 
 *{
 cursor:url(https://i.imgur.com/CpdoEln.png), auto;
+font-size: 20px;
 
 /* border: 1px solid rgb(21, 255, 0) */
 

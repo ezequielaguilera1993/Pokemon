@@ -1,4 +1,3 @@
-import './App.css';
 import { Provider } from "react-redux";
 import store from "./store"
 import { Route } from "react-router-dom";
@@ -13,6 +12,7 @@ import ToCreatePoke from "./components/ToCreatePoke/ToCreatePoke";
 import ToPrincipal from "./components/ToPrincipal/ToPrincipal";
 import Landing from "./components/Landing/Landing";
 import { render } from 'react-dom';
+import styles from './App.module.css';
 
 
 function App() {
@@ -22,20 +22,18 @@ function App() {
 
     <Provider store={store}>
       <React.Fragment>
-        <Route exact path="/"> {/*<==Landing*/}
+        <Route exact path="/">
           <Landing />
         </Route>
 
         <Route path="/principal" >
           <div >
             <ToCreatePoke />
-            <Paginado />
             <PokeName />
             <Busqueda />
+            <Paginado />
             <Escaparate />
             <Paginado />
-
-           
           </div>
         </Route>
 

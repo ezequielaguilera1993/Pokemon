@@ -10,7 +10,7 @@ import './ToPrincipal.css'; //hoja de estilos
  function ToPrincipal({ process, setPunteros }) {
 
 
-    return (<Link to="/principal" > <button>back</button></Link>)
+    return (<Link to="/principal" > <button>Back</button></Link>)
 
 
 }

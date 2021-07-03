@@ -1,7 +1,7 @@
 // console.log("aca")//solo se imprime en cada F5
 import { stat } from "fs"
 import { ADD_CREATED, SET_POKEDETALLE, BUSQUEDA_POKENAME, PROCESS, SET_TYPES, ADD_POKEMONS, SET_PUNTEROS, SET_ID_PK } from "../actions/names"
-
+import { capitalCase } from "../util"
 
 const initialState = {
     allPokes: [],
@@ -137,15 +137,19 @@ function rootReducer(state = initialState, action) {
     //
     if (type === ADD_POKEMONS) {
 
+       let allPokesTypeCap=payload.map((e)=>({...e, types:capitalCase(e.types)}))
+        
         return {
-            ...state, allPokes: state.allPokes.concat(payload), toShowPokes: state.toShowPokes.concat(payload)
+            ...state, allPokes: state.allPokes.concat(allPokesTypeCap), toShowPokes: state.toShowPokes.concat(allPokesTypeCap)
         }
 
     }
 
     if (type === SET_TYPES) {
+
+let payloadCapitalize=payload.map((e)=>({...e, type:capitalCase(e.type)}))
         return {
-            ...state, types: payload
+            ...state, types: payloadCapitalize
         }
     }
 
