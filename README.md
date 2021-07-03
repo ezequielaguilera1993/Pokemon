@@ -59,4 +59,4 @@ La SPA consume un api externa (https://pokeapi.co/) agregandole funcionalidades 
  
 *PostgreSQL, Sequelize*
 
-Además permite crear datos nuevos y alojarlos en un servidor (se pueden crear nuevos pokemons). Para brindar este servicio se utilizo PostgreSQL como gestor de base de datos y Sequelize como ORM
+La app permite crear datos nuevos y alojarlos en un servidor (se pueden crear nuevos pokemons). Para brindar este servicio se utilizo PostgreSQL como gestor de base de datos y Sequelize como ORM
