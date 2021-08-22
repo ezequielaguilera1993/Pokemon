@@ -1,8 +1,13 @@
+#pokeName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-#pokeName{
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#pokeName input {
+  width: 98%;
 
+  padding: 0;
+  margin: 0;
 }

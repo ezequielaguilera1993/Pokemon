@@ -13,6 +13,7 @@ import ToPrincipal from "./components/ToPrincipal/ToPrincipal";
 import Landing from "./components/Landing/Landing";
 import { render } from 'react-dom';
 import styles from './App.module.css';
+import { Nav } from "./components/Nav/Nav";
 
 
 function App() {
@@ -27,14 +28,25 @@ function App() {
         </Route>
 
         <Route path="/principal" >
-          <div >
-            <ToCreatePoke />
-            <PokeName />
-            <Busqueda />
-            <Paginado />
-            <Escaparate />
-            <Paginado />
+
+          <div id={styles.principal} >
+
+            <Nav />
+            <div>
+              <Escaparate />
+              <Paginado />
+            </div>
+
+            <div id={styles.ToCreatePoke} >
+              <ToCreatePoke />
+            </div>
+
+            <div id={styles.PokeName} >
+              <PokeName />
+            </div>
+
           </div>
+
         </Route>
 
 

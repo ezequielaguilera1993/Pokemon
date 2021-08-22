@@ -3,7 +3,7 @@ import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
 import { addCreated, } from "../../actions"//actions
 import styles from './Form.module.css'; //hoja de estilos
-import {capitalCase} from "../../util";
+import { capitalCase } from "../../util";
 
 export function validate(input) {
   let errors = {
@@ -11,31 +11,31 @@ export function validate(input) {
 
   if (!input.name) {
     errors.name = 'name is required';
-  } 
+  }
 
   if (!input.vida) {
     errors.vida = 'vida is required';
-  } 
+  }
 
   if (!input.fuerza) {
     errors.fuerza = 'fuerza is required';
-  } 
+  }
 
   if (!input.defensa) {
     errors.defensa = 'defensa is required';
-  } 
+  }
 
   if (!input.velocidad) {
     errors.velocidad = 'velocidad is required';
-  } 
+  }
 
   if (!input.altura) {
     errors.altura = 'altura is required';
-  } 
+  }
 
   if (!input.peso) {
     errors.peso = 'peso is required';
-  } 
+  }
 
   if (!input.imagen) {
     errors.imagen = 'imagen is required';
@@ -150,39 +150,39 @@ function Form({ addCreated, types }) {
   return (
     <div>
       <form>
-        <div>  <strong>Nombre</strong>    <input className={errors.name?styles.require:styles.allOk} value={pokedata.name} onChange={handleOnChange} name="name" placeholder="Nombre" /></div>
-        <div>  <strong>Vida</strong>    <input className={errors.vida?styles.require:styles.allOk} value={pokedata.vida} onChange={handleOnChange} name="vida" placeholder="Vida" /></div>
-        <div>  <strong>Fuerza</strong>    <input className={errors.fuerza?styles.require:styles.allOk} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" placeholder="Fuerza" /></div>
-        <div>  <strong>Defensa</strong>    <input className={errors.defensa?styles.require:styles.allOk} value={pokedata.defensa} onChange={handleOnChange} name="defensa" placeholder="Defensa" /></div>
-        <div>  <strong>Velocidad</strong>    <input className={errors.velocidad?styles.require:styles.allOk} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" placeholder="Velocidad" /></div>
-        <div>  <strong>Altura</strong>    <input className={errors.altura?styles.require:styles.allOk} value={pokedata.altura} onChange={handleOnChange} name="altura" placeholder="Altura" /></div>
-        <div>  <strong>Peso</strong>    <input className={errors.peso?styles.require:styles.allOk} value={pokedata.peso} onChange={handleOnChange} name="peso" placeholder="Peso" /></div>
-        <div>  <strong>Imagen</strong>    <input className={errors.imagen?styles.require:styles.allOk} value={pokedata.imagen} onChange={handleOnChange} name="imagen" placeholder="Imagen" /></div>
+        <div>  <strong>Nombre</strong>    <input className={errors.name ? styles.require : styles.allOk} value={pokedata.name} onChange={handleOnChange} name="name" placeholder="Nombre" /></div>
+        <div>  <strong>Vida</strong>    <input className={errors.vida ? styles.require : styles.allOk} value={pokedata.vida} onChange={handleOnChange} name="vida" placeholder="Vida" /></div>
+        <div>  <strong>Fuerza</strong>    <input className={errors.fuerza ? styles.require : styles.allOk} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" placeholder="Fuerza" /></div>
+        <div>  <strong>Defensa</strong>    <input className={errors.defensa ? styles.require : styles.allOk} value={pokedata.defensa} onChange={handleOnChange} name="defensa" placeholder="Defensa" /></div>
+        <div>  <strong>Velocidad</strong>    <input className={errors.velocidad ? styles.require : styles.allOk} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" placeholder="Velocidad" /></div>
+        <div>  <strong>Altura</strong>    <input className={errors.altura ? styles.require : styles.allOk} value={pokedata.altura} onChange={handleOnChange} name="altura" placeholder="Altura" /></div>
+        <div>  <strong>Peso</strong>    <input className={errors.peso ? styles.require : styles.allOk} value={pokedata.peso} onChange={handleOnChange} name="peso" placeholder="Peso" /></div>
+        <div>  <strong>Imagen</strong>    <input className={errors.imagen ? styles.require : styles.allOk} value={pokedata.imagen} onChange={handleOnChange} name="imagen" placeholder="Imagen" /></div>
 
-<div id={styles.typesList}>
-        {
-          types.map(e =>
+        <div id={styles.typesList}>
+          {
+            types.map(e =>
 
-            <div key={e.type}>
-              <label>{capitalCase(e.type)}</label>
+              <div key={e.type}>
+                <label>{capitalCase(e.type)}</label>
 
 
-              <input checked={
+                <input checked={
 
-                pokedata.typesId.includes(e.type) ?
-                  true
-                  :
-                  false
+                  pokedata.typesId.includes(e.type) ?
+                    true
+                    :
+                    false
 
-              } name={e.type} onChange={handleOnCheck} type="checkbox" />
+                } name={e.type} onChange={handleOnCheck} type="checkbox" />
 
-            </div>
+              </div>
 
-          )
+            )
 
-        }
-</div>
-        <button clasename={Object.keys(errors)>0?"butonError":""} onClick={handleSubmit}>CREAR 💌</button> {Object.keys(errors)>0?<label>Formulario con campos vacios!</label>:""} 
+          }
+        </div>
+        <button clasename={Object.keys(errors) > 0 ? "butonError" : ""} onClick={handleSubmit}>CREAR 💌</button> {Object.keys(errors) > 0 ? <label>Formulario con campos vacios!</label> : ""}
       </form>
     </div>
 

@@ -15,7 +15,7 @@ var idPokemonCreados = 0
 
 router.post("/", async function (req, res) {
   //esto lo crea, sino te devuelve un array con los que encontro
-let body=req.body
+  let body = req.body
 
   const pokemonFindOrCreated = await Pokemon.findOrCreate({
     //el create inserta el valor en la tabla, en category
@@ -39,7 +39,7 @@ let body=req.body
 
     let tiposEncontrados = await Types.findAll({
       where: {
-        [Op.or]: whereTypesId  
+        [Op.or]: whereTypesId
       }
     })
 

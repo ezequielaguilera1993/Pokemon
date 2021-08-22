@@ -1,21 +1,29 @@
-#tarjeta{
-
-margin-left: 14px;
-margin-right: 14px;
-margin-top: 14px;
-background-color: rgba(250, 240, 230, 0.24);
-border-radius: 40px;
-display:block;
-transition: background-color 700ms;
-font-size: 30px;
-color: rgb(12, 11, 11);
-
+#tarjeta {
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-top: 14px;
+  background-color: rgba(250, 240, 230, 0.24);
+  border-radius: 40px;
+  display: block;
+  font-size: 30px;
+  color: rgb(12, 11, 11);
+  transition: all 400ms;
+  box-shadow: 0 0 0.5vmax 0.1vmax black;
 }
 
-#tarjeta:hover{
+#tarjeta:hover {
+  background-color: rgba(255, 255, 255, 0.63);
+  transform: scale(1.05);
+  transition: all 400ms;
 
-    background-color: rgba(255, 255, 255, 0.63);
-    transition: background-color 700ms;
+  box-shadow: 0 0 0.9vmax 0.3vmax rgb(12, 43, 0);
+}
 
+#tarjeta img {
+  transition: all 400ms;
+}
 
+#tarjeta img:hover {
+  transform: scale(1.2);
+  transition: all 400ms;
 }

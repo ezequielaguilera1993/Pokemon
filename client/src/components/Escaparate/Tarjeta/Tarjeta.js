@@ -41,3 +41,6 @@ function Tarjeta({ name, types, imagen, fuerza, id, idPokemonCreado }) {
 
 
 export default connect(null)(Tarjeta);
+
+
+

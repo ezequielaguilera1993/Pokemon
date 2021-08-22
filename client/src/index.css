@@ -1,18 +1,14 @@
 body {
   margin: 0;
   /* border: 1px solid rgb(0, 0, 0) */
- 
 }
 
-#root{
+#root {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-display: flex;
-flex-direction: column;
-text-align: center;
-
-/* border: 1px solid rgb(0, 0, 0) */
-
-
+  /* border: 1px solid rgb(0, 0, 0) */
 }
 
 html {
@@ -22,16 +18,12 @@ html {
   background: -o-linear-gradient(130deg, #2d3b66, #63d326);
   background: linear-gradient(130deg, #2d3b66, #63d326);
 
-
-  min-height:100%;
+  min-height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* border: 1px solid rgb(0, 0, 0) */
-
-  
-
 }
 
 /* width */
@@ -50,7 +42,6 @@ html {
   background: rgb(51, 73, 53);
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(31, 29, 29);
-
 }
 
 /*
@@ -65,5 +56,4 @@ For webkit browsers, you can use the following pseudo elements to customize the 
 ::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
 ::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements. */
 code {
-
 }

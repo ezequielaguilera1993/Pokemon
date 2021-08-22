@@ -1,7 +1,10 @@
-#filtrarOrdenar{
-
-display: flex;
-justify-content: center;
-
+/* 
+/* 
+*/
+#busqueda {
+  margin: 1vh 0vh;
 }
 
+#busqueda button {
+  width: 100%;
+}

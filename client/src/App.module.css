@@ -1,15 +1,29 @@
+#ToCreatePoke {
+  position: fixed;
+  top: 10vh;
+  right: 0px;
+  width: 16vw;
+}
+
+#PokeName {
+  position: fixed;
+  top: 3vh;
+  right: 0px;
+  width: 16vw;
+  text-align: center;
+}
+
+#principal {
+}
+
 .App {
   text-align: center;
 }
 
-html{
-
+html {
 }
 
-
-#principalCommands{
-
-
+#principalCommands {
 }
 
 body {
@@ -20,36 +34,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-display: flex;
+  display: flex;
 
-align-items: center;
-flex-direction: column-reverse;
-font-size: larger;
-
-
+  align-items: center;
+  flex-direction: column-reverse;
+  font-size: larger;
 }
 
-*{
-cursor:url(https://i.imgur.com/CpdoEln.png), auto;
-font-size: 20px;
+* {
+  cursor: url(https://i.imgur.com/CpdoEln.png), auto;
+  font-size: 20px;
 
-/* border: 1px solid rgb(21, 255, 0) */
-
+  /* border: 1px solid rgb(21, 255, 0) */
 }
 
 button {
   font-family: "Bad Script", cursive;
   font-family: "Gochi Hand", cursive;
   color: #201d1d;
-  border-radius: 3px;
+  border-radius: 7px;
   font-size: larger;
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(200, 209, 188);
   transition: background-color 300ms;
-
+  box-shadow: 0 0 0.2vmax 0.01vmax;
 }
-button:hover{
+button:hover {
   background-color: rgb(255, 255, 255);
-    transition: background-color 500ms;
+  transition: background-color 500ms;
 }
 
 select {
@@ -58,7 +69,7 @@ select {
   color: #201d1d;
   border-radius: 10px;
   font-size: larger;
-
+  box-shadow: 0 0 0.2vmax 0.01vmax;
 }
 
 input {
@@ -67,7 +78,7 @@ input {
   color: #201d1d;
   border-radius: 7px;
   font-size: larger;
-
+  box-shadow: 0 0 0.2vmax 0.01vmax;
 }
 
 .App-logo {
