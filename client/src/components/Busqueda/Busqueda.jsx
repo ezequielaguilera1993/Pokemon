@@ -27,6 +27,13 @@ function Busqueda({ process, types, toShowPokes }) {
           backgroundColor: "#000000bb",
           borderRadius: "10px",
           fontSize: "1.7rem",
+          textAlign: "center",
+          verticalAlign: "center",
+          paddingTop: ".3rem",
+          height: "1.6rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         Ordenar
@@ -60,20 +67,51 @@ function Busqueda({ process, types, toShowPokes }) {
         style={{
           backgroundColor: "#000000bb",
           borderRadius: "10px",
-          marginTop: "1vh",
           fontSize: "1.7rem",
+          textAlign: "center",
+          verticalAlign: "center",
+          paddingTop: ".3rem",
+          height: "1.6rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "1vh",
         }}
       >
         Filtrar
       </div>
 
-      <div style={{ display: "flex" }}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <label> ♦ Por tipo </label>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "rgb(226, 226, 226)",
+            color: "black",
+            margin: ".2vmax",
+            borderRadius: "1rem",
+            boxShadow: "0 0 1rem .1rem ",
+            padding: ".4vmax" /* , flexDirection: "column" */,
+            width: "fit-content",
+          }}
+        >
+          <label style={{ marginRight: ".3vmax", fontSize: "1.2rem" }}>
+            Por tipo
+          </label>
+
           <select
             name="type"
             onChange={handleProcess}
-            style={{ height: "fit-content", padding: "0px", margin: "0px" }}
+            style={{
+              height: "fit-content",
+              padding: "0px",
+              margin: "0px",
+              outline: "none",
+            }}
           >
             {types.map((e) => (
               <option key={capitalCase(e.type)}>{capitalCase(e.type)}</option>
@@ -81,14 +119,32 @@ function Busqueda({ process, types, toShowPokes }) {
           </select>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <label> ♦ Solo pokemons creados </label>
+        <div
+          style={{
+            backgroundColor: "rgb(226, 226, 226)",
+            color: "black",
+            margin: ".2vmax",
+            borderRadius: "1rem",
+            boxShadow: "0 0 1rem .1rem ",
+            padding: ".4vmax" /* , flexDirection: "column" */,
+          }}
+        >
+          <label
+            style={{
+              marginRight: ".6vmax",
+              fontSize: "1.2rem",
+            }}
+          >
+            Creados por mí
+          </label>
           <input
             style={{
               width: "25px",
               height: "25px",
               margin: 0,
               marginBottom: "-1vh",
+              position: "relative",
+              top: ".45vh",
             }}
             name="dbPokesOnly"
             type="checkbox"

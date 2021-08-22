@@ -15,9 +15,19 @@ import { render } from 'react-dom';
 import styles from './App.module.css';
 import { Nav } from "./components/Nav/Nav";
 
+import Particles from "react-tsparticles";
+
+
+
 
 function App() {
+  function particlesInit(main) {
+    console.log(main);
+  }
 
+  function particlesLoaded(container) {
+    console.log(container);
+  }
 
   return (
 
@@ -31,18 +41,18 @@ function App() {
 
           <div id={styles.principal} >
 
+            <div id={styles.ToCreatePoke} >
+              <ToCreatePoke />
+            </div>
             <Nav />
             <div>
               <Escaparate />
               <Paginado />
             </div>
 
-            <div id={styles.ToCreatePoke} >
-              <ToCreatePoke />
-            </div>
 
             <div id={styles.PokeName} >
-              <PokeName />
+              <Busqueda />
             </div>
 
           </div>

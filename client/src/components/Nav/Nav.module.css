@@ -2,18 +2,6 @@
   background-color: rgba(4, 27, 8, 0.336);
   border-radius: 1vmax;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#ToCreatePoke {
-  margin: 2vh 2vw;
-}
-
-#PokeName {
-  margin: 2vh 2vw;
-}
-
-#Busqueda {
-  margin: 2vh 2vw;
+  flex-direction: row;
+  align-content: center;
 }

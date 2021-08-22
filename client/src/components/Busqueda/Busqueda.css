@@ -2,7 +2,9 @@
 /* 
 */
 #busqueda {
-  margin: 1vh 0vh;
+  margin: 1vh 0.2vw;
+  margin-right: 1vw;
+  transform: translatex(-7%) translatey(4%);
 }
 
 #busqueda button {

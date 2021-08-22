@@ -45,7 +45,8 @@ function Paginado({ setPunteros, toShowPokes }) {
 
         return htmls
 
-      })(numeroDePaginas)}
+      })(numeroDePaginas)
+    }
 
 
     <button name="adelante" onClick={handlePaginado}>ADELANTE</button>
