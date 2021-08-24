@@ -18,7 +18,7 @@ router.get("/:id", async function (req, res) {
     if (pokeId.slice(0, 2) == "db") {
 
         let pokeDb = await Pokemon.findByPk(pokeId, { include: Types })
-        
+
         if (pokeDb) {
             //Procesado para el front//
             pokeDb = pokeDb.dataValues //se queda solo con el dataValues
@@ -28,7 +28,7 @@ router.get("/:id", async function (req, res) {
             //////////////////////////
             res.json(pokeDb)
         }
-        else res.json("Pokemon no encontrado")
+        else res.json("No encontrado")
 
     }
 

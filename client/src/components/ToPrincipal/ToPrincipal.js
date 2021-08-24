@@ -7,10 +7,10 @@ import { process, setPunteros } from "../../actions"//actions
 import './ToPrincipal.css'; //hoja de estilos
 
 ///SOLO SI TIENE QUE LEER EL ESTADO
- function ToPrincipal({ process, setPunteros }) {
+function ToPrincipal({ process, setPunteros }) {
 
 
-    return (<Link to="/principal" > <button>Back</button></Link>)
+    return (<Link to="/principal" > <button>Atrás</button></Link>)
 
 
 }

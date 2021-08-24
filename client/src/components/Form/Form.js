@@ -4,6 +4,10 @@ import { connect } from "react-redux";//y esto para conectarlo con redux
 import { addCreated, } from "../../actions"//actions
 import styles from './Form.module.css'; //hoja de estilos
 import { capitalCase } from "../../util";
+import Swal from 'sweetalert2'
+import { useHistory } from 'react-router-dom';
+
+
 
 export function validate(input) {
   let errors = {
@@ -53,16 +57,10 @@ export function validate(input) {
 
 function Form({ addCreated, types }) {
 
+  const history = useHistory();
+
   let [pokedata, setPokedata] = useState({
-    name: 'MoriartyIII',
-    vida: 2000,
-    fuerza: 21,
-    defensa: 32,
-    velocidad: 21,
-    altura: 12,
-    peso: 12,
-    imagen: 'https://www.cleverfiles.com/howto/wp-content/uploads/2018/03/minion.jpg',
-    typesId: ["normal"],
+    typesId: ["Normal"],
   })
 
 
@@ -81,14 +79,26 @@ function Form({ addCreated, types }) {
       }
     )
       .then(response => {
-        console.log("response data", response.data)
-
+        console.log(response)
         const { name, types, imagen, fuerza, defaults, id } = response.data
-
         addCreated({ name, types, imagen, fuerza, defaults, id })
+
+        Swal.fire({
+          imageUrl: pokedata.imagen,
+          title: pokedata.name + " fue registrado con éxito!",
+          imageAlt: 'Pokemon registrado'
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          history.push("/principal")
+
+        })
       })
       .catch(e => {
-        alert("Ya tenés a ese pokemon");
+        Swal.fire({
+          imageUrl: pokedata.imagen,
+          title: "Pokemon ya registrado!",
+          imageAlt: 'Pokemon ya registrado!'
+        })
       });
 
 
@@ -98,6 +108,7 @@ function Form({ addCreated, types }) {
   let [errors, setErrors] = useState({})
 
   function handleOnChange(e) {
+    console.log(pokedata)
 
 
     let parseo = parseInt(e.target.value)
@@ -105,7 +116,6 @@ function Form({ addCreated, types }) {
 
 
     // if (parseo.toString() !== "NaN") { value = parseo }
-    console.log(!!e.target.value)
     if (parseo.toString() !== "NaN" && e.target.value && e.target.name !== "name" && e.target.name !== "imagen") { value = parseo }
 
     var objError = validate({
@@ -122,7 +132,6 @@ function Form({ addCreated, types }) {
 
   }
 
-  console.log(pokedata)
 
   function handleOnCheck(e) {
     let name = e.target.name
@@ -148,22 +157,26 @@ function Form({ addCreated, types }) {
 
 
   return (
-    <div>
-      <form>
-        <div>  <strong>Nombre</strong>    <input className={errors.name ? styles.require : styles.allOk} value={pokedata.name} onChange={handleOnChange} name="name" placeholder="Nombre" /></div>
-        <div>  <strong>Vida</strong>    <input className={errors.vida ? styles.require : styles.allOk} value={pokedata.vida} onChange={handleOnChange} name="vida" placeholder="Vida" /></div>
-        <div>  <strong>Fuerza</strong>    <input className={errors.fuerza ? styles.require : styles.allOk} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" placeholder="Fuerza" /></div>
-        <div>  <strong>Defensa</strong>    <input className={errors.defensa ? styles.require : styles.allOk} value={pokedata.defensa} onChange={handleOnChange} name="defensa" placeholder="Defensa" /></div>
-        <div>  <strong>Velocidad</strong>    <input className={errors.velocidad ? styles.require : styles.allOk} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" placeholder="Velocidad" /></div>
-        <div>  <strong>Altura</strong>    <input className={errors.altura ? styles.require : styles.allOk} value={pokedata.altura} onChange={handleOnChange} name="altura" placeholder="Altura" /></div>
-        <div>  <strong>Peso</strong>    <input className={errors.peso ? styles.require : styles.allOk} value={pokedata.peso} onChange={handleOnChange} name="peso" placeholder="Peso" /></div>
-        <div>  <strong>Imagen</strong>    <input className={errors.imagen ? styles.require : styles.allOk} value={pokedata.imagen} onChange={handleOnChange} name="imagen" placeholder="Imagen" /></div>
+    <div id={styles.formContainer}>
+      <form id={styles.form}>
+        <label id={styles.tittle}>Características</label>
+
+        <div id={styles.inputContainer}>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Nombre</label>    <input className={errors.name ? styles.require : styles.allOk} value={pokedata.name} onChange={handleOnChange} name="name" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Vida</label>    <input className={errors.vida ? styles.require : styles.allOk} value={pokedata.vida} onChange={handleOnChange} name="vida" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Fuerza</label>    <input className={errors.fuerza ? styles.require : styles.allOk} value={pokedata.fuerza} onChange={handleOnChange} name="fuerza" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Defensa</label>    <input className={errors.defensa ? styles.require : styles.allOk} value={pokedata.defensa} onChange={handleOnChange} name="defensa" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Velocidad</label>    <input className={errors.velocidad ? styles.require : styles.allOk} value={pokedata.velocidad} onChange={handleOnChange} name="velocidad" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Altura</label>    <input className={errors.altura ? styles.require : styles.allOk} value={pokedata.altura} onChange={handleOnChange} name="altura" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Peso</label>    <input className={errors.peso ? styles.require : styles.allOk} value={pokedata.peso} onChange={handleOnChange} name="peso" /></div>
+          <div id={styles.someInputAndLabel}><label id={styles.label}>Imagen</label>    <input className={errors.imagen ? styles.require : styles.allOk} value={pokedata.imagen} onChange={handleOnChange} name="imagen" /></div>
+        </div>
 
         <div id={styles.typesList}>
           {
             types.map(e =>
 
-              <div key={e.type}>
+              <div key={e.type} style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", marginBottom: "1vh" }}>
                 <label>{capitalCase(e.type)}</label>
 
 
@@ -177,13 +190,14 @@ function Form({ addCreated, types }) {
                 } name={e.type} onChange={handleOnCheck} type="checkbox" />
 
               </div>
-
             )
-
           }
         </div>
-        <button clasename={Object.keys(errors) > 0 ? "butonError" : ""} onClick={handleSubmit}>CREAR 💌</button> {Object.keys(errors) > 0 ? <label>Formulario con campos vacios!</label> : ""}
+
+        <button claseName={Object.keys(errors) > 0 ? "butonError" : ""} onClick={handleSubmit} style={{ background: "rgba(200,200,200,.6)", width: "40%" }} >Crear</button> {Object.keys(errors) > 0 ? <label>Formulario con campos vacios!</label> : ""}
+
       </form>
+
     </div>
 
   )
@@ -204,19 +218,19 @@ export default connect(mapeoState, { addCreated, })(Form);
 
 /*
 where: {
-  name: "culomon1" //si esta este devolvemelo, sino crealo, junto con lo que esta abajo
+        name: "culomon1" //si esta este devolvemelo, sino crealo, junto con lo que esta abajo
 }
-,
-defaults: {
-  idPokemonCreado: "db" + (++idPokemonCreados),
-  vida: 2000,
-  fuerza: 21,
-  defensa: 32,
-  velocidad: 21,
-  altura: 12,
-  peso: 12,
-  imagen: null
-  types:1
+      ,
+      defaults: {
+        idPokemonCreado: "db" + (++idPokemonCreados),
+      vida: 2000,
+      fuerza: 21,
+      defensa: 32,
+      velocidad: 21,
+      altura: 12,
+      peso: 12,
+      imagen: null
+      types:1
 } */
 function giveMeIds(array) {
   let obj = {
@@ -243,13 +257,13 @@ function giveMeIds(array) {
   }
 
   array = array.reduce((acc, element) => {
-
-    if (obj[element]) {
-      acc.push(obj[element]); return acc
+    if (obj[element.toLowerCase()]) {
+      acc.push(obj[element.toLowerCase()])
+      return acc
     }
 
-    return acc
   }, []);
+
 
   return array
 

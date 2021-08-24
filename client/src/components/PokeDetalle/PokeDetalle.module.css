@@ -1,0 +1,19 @@
+#container {
+  box-shadow: 0 0 1rem 0.1rem black;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 1rem;
+  width: 50vw;
+  margin-top: 5vh;
+}
+
+#minorDetails {
+  max-width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26%, 1fr));
+  grid-gap: 0%;
+}
+
+#container img {
+  margin: -2vh 0;
+  filter: drop-shadow(0px 0px 1.3rem rgb(255, 255, 255));
+}

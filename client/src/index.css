@@ -12,11 +12,6 @@ body {
 }
 
 html {
-  background: -webkit-linear-gradient(130deg, #2d3b66, #63d326);
-  background: -moz-linear-gradient(130deg, #2d3b66, #63d326);
-  background: -ms-linear-gradient(130deg, #2d3b66, #63d326);
-  background: -o-linear-gradient(130deg, #2d3b66, #63d326);
-  background: linear-gradient(130deg, #2d3b66, #63d326);
   min-height: 100%;
   background-attachment: fixed;
   background-position: center;

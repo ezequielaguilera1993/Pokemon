@@ -114,7 +114,7 @@ router.get("/", async function (req, res) {
 
                 .catch(() => res.json(
                     {
-                        name: "Pokemon no encontrado",
+                        name: "No encontrado",
                         types: [],
                         fuerza: "",
                         id: "",
@@ -130,11 +130,6 @@ router.get("/", async function (req, res) {
 })
 
 
-/* name: "Pokemon no encontrado",
-                    types: [],
-                    fuerza: "",
-                    id: "",
-                   imagen: "https://pm1.narvii.com/6121/2985db5e175084c069f3cab12a9afb5a896ee276_hq.jpg", /* descripcion:error.stack  */
 
 
 module.exports = router

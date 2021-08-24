@@ -16,6 +16,7 @@ var idPokemonCreados = 0
 router.post("/", async function (req, res) {
   //esto lo crea, sino te devuelve un array con los que encontro
   let body = req.body
+  console.log(body.typesId)
 
   const pokemonFindOrCreated = await Pokemon.findOrCreate({
     //el create inserta el valor en la tabla, en category
@@ -33,7 +34,6 @@ router.post("/", async function (req, res) {
   let flagCreate = pokemonFindOrCreated[1]
 
   if (flagCreate) {
-
     //Busco mis types
     var whereTypesId = body.typesId.map(e => { return { id: e } })
 

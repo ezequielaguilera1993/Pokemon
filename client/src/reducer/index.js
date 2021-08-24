@@ -21,12 +21,13 @@ function rootReducer(state = initialState, action) {
     let type = action.type
     let payload = action.payload
 
+
     if (type === ADD_CREATED) {
 
-        let tmp= state.allPokes
+        let tmp = state.allPokes
         tmp.unshift(payload)
         return {
-            ...state, allPokes:tmp, toShowPokes:tmp
+            ...state, allPokes: tmp, toShowPokes: tmp
         }
     }
 
@@ -51,12 +52,12 @@ function rootReducer(state = initialState, action) {
 
         //FILTER
         //TYPE
-        if (payload.type && payload.type !== "normal") {
-            console.log("type")
+        if (payload.type && payload.type !== "Normal") {
+            console.log(payload.type)
 
             toShowPokes = toShowPokes.filter(e => e.types.includes(payload.type))
         }
-        
+
         //DB_PK_ONLY
         if (payload.dbPokesOnly) {
             console.log("pk_Only")
@@ -137,8 +138,8 @@ function rootReducer(state = initialState, action) {
     //
     if (type === ADD_POKEMONS) {
 
-       let allPokesTypeCap=payload.map((e)=>({...e, types:capitalCase(e.types)}))
-        
+        let allPokesTypeCap = payload.map((e) => ({ ...e, types: capitalCase(e.types) }))
+
         return {
             ...state, allPokes: state.allPokes.concat(allPokesTypeCap), toShowPokes: state.toShowPokes.concat(allPokesTypeCap)
         }
@@ -147,7 +148,7 @@ function rootReducer(state = initialState, action) {
 
     if (type === SET_TYPES) {
 
-let payloadCapitalize=payload.map((e)=>({...e, type:capitalCase(e.type)}))
+        let payloadCapitalize = payload.map((e) => ({ ...e, type: capitalCase(e.type) }))
         return {
             ...state, types: payloadCapitalize
         }

@@ -55,12 +55,13 @@ button {
   border-radius: 7px;
   font-size: larger;
   background-color: rgb(226, 226, 226);
-  transition: background-color 300ms;
+  transition: background-color 100ms;
   box-shadow: 0 0 0.2vmax 0.01vmax;
+  background-image: url();
 }
 button:hover {
   background-color: rgb(255, 255, 255);
-  transition: background-color 500ms;
+  transition: background-color 200ms;
 }
 
 select {

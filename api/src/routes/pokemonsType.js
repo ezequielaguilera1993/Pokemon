@@ -9,23 +9,23 @@ En una primera instancia deberán traerlos desde pokeapi y guardarlos en su prop
  */
 
 router.get("/types", async function (req, res) {
-//
-        let arrayPromises;
+    //
+    let arrayPromises;
 
-        await axios.get("https://pokeapi.co/api/v2/type").then(response => {
+    await axios.get("https://pokeapi.co/api/v2/type").then(response => {
 
-            arrayPromises = response.data.results.map(async function (e) {
-                let name = e.name
+        arrayPromises = response.data.results.map(async function (e) {
+            let name = e.name
 
-                return Types.findOrCreate({
-                    where:{type: name}
-                }).catch(er => console.log("error en typesAxios!"))
+            return Types.findOrCreate({
+                where: { type: name }
+            }).catch(er => console.log("error en typesAxios!"))
 
-            })
         })
+    })
 
-        await Promise.all(arrayPromises)
-        res.json(await Types.findAll())
+    await Promise.all(arrayPromises)
+    res.json(await Types.findAll())
 
 
 })

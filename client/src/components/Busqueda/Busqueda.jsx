@@ -26,11 +26,12 @@ function Busqueda({ process, types, toShowPokes }) {
         style={{
           backgroundColor: "#000000bb",
           borderRadius: "10px",
-          fontSize: "1.7rem",
+          fontSize: "1.3rem",
           textAlign: "center",
           verticalAlign: "center",
           paddingTop: ".3rem",
-          height: "1.6rem",
+          height: "1.2rem",
+          marginBottom: ".3vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -67,11 +68,12 @@ function Busqueda({ process, types, toShowPokes }) {
         style={{
           backgroundColor: "#000000bb",
           borderRadius: "10px",
-          fontSize: "1.7rem",
+          fontSize: "1.3rem",
           textAlign: "center",
           verticalAlign: "center",
           paddingTop: ".3rem",
-          height: "1.6rem",
+          height: "1.2rem",
+          marginBottom: ".0vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -90,13 +92,14 @@ function Busqueda({ process, types, toShowPokes }) {
       >
         <div
           style={{
-            backgroundColor: "rgb(226, 226, 226)",
             color: "black",
             margin: ".2vmax",
-            borderRadius: "1rem",
-            boxShadow: "0 0 1rem .1rem ",
-            padding: ".4vmax" /* , flexDirection: "column" */,
+            borderRadius: "7px",
+            boxShadow: "0 0 0.5rem .05rem ",
+            padding: ".3vh .4vw" /* , flexDirection: "column" */,
             width: "fit-content",
+            background:
+              "url(https://st2.depositphotos.com/3769671/7957/v/600/depositphotos_79574646-stock-illustration-paper-texture-template.jpg)",
           }}
         >
           <label style={{ marginRight: ".3vmax", fontSize: "1.2rem" }}>
@@ -124,18 +127,22 @@ function Busqueda({ process, types, toShowPokes }) {
             backgroundColor: "rgb(226, 226, 226)",
             color: "black",
             margin: ".2vmax",
-            borderRadius: "1rem",
-            boxShadow: "0 0 1rem .1rem ",
-            padding: ".4vmax" /* , flexDirection: "column" */,
+            padding: ".0vh .1vw" /* , flexDirection: "column" */,
+            paddingBottom: ".3vh" /* , flexDirection: "column" */,
+            borderRadius: "7px",
+            boxShadow: "0 0 0.5rem .05rem ",
+            background:
+              "url(https://st2.depositphotos.com/3769671/7957/v/600/depositphotos_79574646-stock-illustration-paper-texture-template.jpg)",
           }}
         >
           <label
             style={{
               marginRight: ".6vmax",
               fontSize: "1.2rem",
+              lineHeight: "3.4vh",
             }}
           >
-            Creados por mí
+            Solo agregados
           </label>
           <input
             style={{
