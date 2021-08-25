@@ -71,7 +71,7 @@ function Form({ addCreated, types }) {
     // let sendObj = { name, typesId: giveMeIds(typesId), defaults }
     // console.log(name, typesId, altura, defensa, fuerza, imagen, peso, velocidad, vida)
     typesId = giveMeIds(typesId)
-    axios.post("http://localhost:3001/pokemons",
+    axios.post(BACKEND_URL() + "/pokemons",
       {
         defaults: { ...defaults },
         name,

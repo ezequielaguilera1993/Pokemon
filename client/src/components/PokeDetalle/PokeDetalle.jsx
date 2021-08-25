@@ -10,11 +10,9 @@ function PokeDetalle({ pokeDetalle, setPokeDetalle, match }) {
   let idPokemon = match.params.idPokemon;
 
   useEffect(async () => {
-    axios
-      .get("http://localhost:3001/pokemons/" + idPokemon)
-      .then(async (res) => {
-        setPokeDetalle(res.data);
-      });
+    axios.get(BACKEND_URL() + "/pokemons/" + idPokemon).then(async (res) => {
+      setPokeDetalle(res.data);
+    });
   }, []);
 
   return (

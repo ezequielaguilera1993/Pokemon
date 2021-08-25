@@ -18,7 +18,7 @@ function PokeName({ busquedaPokename }) {
     let datoEnviado = dato
     if (dato === "") { datoEnviado = "_" }
 
-    axios.get("http://localhost:3001/pokemons?pokeName=" + datoEnviado).then(
+    axios.get(BACKEND_URL() + "/pokemons?pokeName=" + datoEnviado).then(
 
       (res) => busquedaPokename(res.data)
 
