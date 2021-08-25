@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";//esto
 import { Link } from 'react-router-dom';//si precise routing
 import Styles from './ToCreatePoke.modules.css'; //hoja de estilos
 import { process, setPunteros } from "../../actions"//actions
-import { connect } from "react-redux";//y esto para conectarlo con redux
+import { connect } from "react-redux"; import { BACKEND_URL } from "../../util";
 
 function ToCreatePoke() {
     process({})

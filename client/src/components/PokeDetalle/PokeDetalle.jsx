@@ -2,7 +2,8 @@ import React, { Component, useEffect, useState } from "react"; //esto
 import { connect } from "react-redux"; //y esto para conectarlo con redux
 import { useParams } from "react-router-dom";
 import { addMovieFavorite, setPokeDetalle } from "../../actions"; //actions
-import Styles from "./PokeDetalle.module.css"; //hoja de estilos
+import Styles from "./PokeDetalle.module.css";
+import { BACKEND_URL } from "../../util";
 
 const axios = require("axios").default; //para no tener que esta accediendo al default tood el tiempo
 

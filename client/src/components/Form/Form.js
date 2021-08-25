@@ -5,7 +5,7 @@ import { addCreated, } from "../../actions"//actions
 import styles from './Form.module.css'; //hoja de estilos
 import { capitalCase } from "../../util";
 import Swal from 'sweetalert2'
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'; import { BACKEND_URL } from "../../util";
 
 
 

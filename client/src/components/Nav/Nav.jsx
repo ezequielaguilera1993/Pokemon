@@ -5,6 +5,7 @@ import Busqueda from "../Busqueda/Busqueda";
 import Paginado from "../Paginado/Paginado";
 import PokeName from "../PokeName/PokeName";
 import Styles from "./Nav.module.css";
+import { BACKEND_URL } from "../../util";
 
 export function Nav({ process, types, toShowPokes }) {
   return (

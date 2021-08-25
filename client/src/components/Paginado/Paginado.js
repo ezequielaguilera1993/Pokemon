@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
 import { setPunteros } from "../../actions"//actions
 
-import './Paginado.css'; //hoja de estilos
+import './Paginado.css'; import { BACKEND_URL } from "../../util";
 
 
 function Paginado({ setPunteros, toShowPokes }) {

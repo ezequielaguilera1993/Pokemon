@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component, useState } from "react";//esto
 import { connect } from "react-redux";//y esto para conectarlo con redux
 import { busquedaPokename } from "../../actions"//actions
-import styles from './PokeName.module.css'; //hoja de estilos
+import styles from './PokeName.module.css'; import { BACKEND_URL } from "../../util";
 
 function PokeName({ busquedaPokename }) {
 

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { process } from "../../actions";
 import "./Busqueda.css";
 import { capitalCase } from "../../util";
+import { BACKEND_URL } from "../../util";
 function Busqueda({ process, types, toShowPokes }) {
   const [optionObj, setOptionObj] = useState({
     order: "",
