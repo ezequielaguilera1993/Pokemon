@@ -8,6 +8,27 @@ import { BACKEND_URL } from "../../util";
 
 const axios = require("axios").default; //para no tener que esta accediendo al default tood el tiempo
 
+let preliadImages;
+function preloadImages(array) {
+  if (!preloadImages.list) {
+    preloadImages.list = [];
+  }
+  var list = preloadImages.list;
+  for (var i = 0; i < array.length; i++) {
+    var img = new Image();
+    img.onload = function () {
+      var index = list.indexOf(this);
+      if (index !== -1) {
+        // remove image from the array once it's loaded
+        // for memory consumption reasons
+        list.splice(index, 1);
+      }
+    };
+    list.push(img);
+    img.src = array[i];
+  }
+}
+
 async function refresh() {
   /////REFRESH///////
   await axios.put(BACKEND_URL() + "/pokemons");
@@ -29,6 +50,9 @@ async function refresh() {
       store.dispatch(addPokemons(e.data.docePokemonos)); //en data esta el objeto!!
     });
   });
+
+  //Imagenes al caché
+  /**  Recibe un array de strings! */
 }
 
 refresh();
@@ -45,6 +69,10 @@ function Landing({ toShowPokes }) {
           type="audio/mpeg"
         />
       </audio>
+
+      {toShowPokes.map((e) => (
+        <img src={e.imagen} style={{ display: "none" }} />
+      ))}
 
       <img
         id={Style.cartelPokemon}
