@@ -17,7 +17,7 @@ server.use(cookieParser());
 server.use(morgan('dev'));//la version dev es para que de cierta info que me ayude
 
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000', process.env.REACT_APP_REMOTE_BACKEND); //**cambio** */ update to match the domain you will make the request from//aca habia un 3000!
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000', 'https://pokemon-proyect.vercel.app'); //**cambio** */ update to match the domain you will make the request from//aca habia un 3000!
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
