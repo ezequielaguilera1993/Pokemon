@@ -73,12 +73,11 @@ router.get("/", async function (req, res) {
         if (pokeDb.length !== 0) {
 
             pokeDb = pokeDb[0].dataValues
-
             res.json({
                 name: pokeDb.name,
                 types: pokeDb.Types.map((e) => e.type),
                 fuerza: pokeDb.fuerza,
-                imagen: "null",
+                imagen: pokeDb.imagen,
                 id: pokeDb.idPokemonCreado
             })
         }

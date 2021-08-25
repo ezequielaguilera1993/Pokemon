@@ -53,14 +53,14 @@ function rootReducer(state = initialState, action) {
         //FILTER
         //TYPE
         if (payload.type && payload.type !== "Normal") {
-            console.log(payload.type)
+
 
             toShowPokes = toShowPokes.filter(e => e.types.includes(payload.type))
         }
 
         //DB_PK_ONLY
         if (payload.dbPokesOnly) {
-            console.log("pk_Only")
+
 
             toShowPokes = toShowPokes.filter(e => typeof e.id !== "number")
         }
@@ -72,12 +72,12 @@ function rootReducer(state = initialState, action) {
 
         //POR FUERZA///////////////////
         if (payload.order === "menor_a_mayor") {
-            console.log("oreder fuerza menor a mayor")
+
             toShowPokes = toShowPokes.sort((a, b) => a.fuerza - b.fuerza)
 
         }
         if (payload.order === "mayor_a_menor") {
-            console.log("oreder fuerza mayot a menor")
+
 
             toShowPokes = toShowPokes.sort((a, b) => b.fuerza - a.fuerza)
         }
@@ -85,7 +85,7 @@ function rootReducer(state = initialState, action) {
 
         //POR ALFAB//////////////////
         if (payload.order === "A_Z") {
-            console.log('order alfaB AZ')
+
 
             toShowPokes = toShowPokes.sort((e1, e2) => {
                 var compare = false;
@@ -108,7 +108,7 @@ function rootReducer(state = initialState, action) {
         }
         //////////////////////
         if (payload.order === "Z_A") {
-            console.log('order alfaB ZA')
+
 
             toShowPokes = toShowPokes.sort((e1, e2) => {
                 var compare = false;

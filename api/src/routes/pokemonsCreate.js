@@ -16,7 +16,6 @@ var idPokemonCreados = 0
 router.post("/", async function (req, res) {
   //esto lo crea, sino te devuelve un array con los que encontro
   let body = req.body
-  console.log(body.typesId)
 
   const pokemonFindOrCreated = await Pokemon.findOrCreate({
     //el create inserta el valor en la tabla, en category
@@ -64,7 +63,6 @@ router.post("/", async function (req, res) {
     } = pokemones[0]
 
     let types = pokemones[0].Types.map(e => e.type)
-
     res.json({
       types,
       name,

@@ -14,13 +14,16 @@ function PokeName({ busquedaPokename }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setDato("")
     let datoEnviado = dato
     if (dato === "") { datoEnviado = "_" }
+    axios.get(BACKEND_URL() + "/pokemons?pokeName=" + datoEnviado.toLocaleLowerCase()).then(
+      (res) => {
 
-    axios.get(BACKEND_URL() + "/pokemons?pokeName=" + datoEnviado).then(
 
-      (res) => busquedaPokename(res.data)
+        busquedaPokename(res.data)
+      }
+
 
 
     )

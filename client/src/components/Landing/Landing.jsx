@@ -9,17 +9,13 @@ import { BACKEND_URL } from "../../util";
 const axios = require("axios").default; //para no tener que esta accediendo al default tood el tiempo
 
 async function refresh() {
-  console.log(BACKEND_URL() + "/pokemons");
   /////REFRESH///////
-  await axios.put(BACKEND_URL() + "/pokemons").then((e) => {
-    console.log("refresh de db exitoso");
-  });
+  await axios.put(BACKEND_URL() + "/pokemons");
   //
 
   //CUANDO ESTOS DOS SE VALORIZAN, RECIEN AHI APARECE EL BOTON
   /////GET_TYPES/////
-  axios.get(BACKEND_URL() + "/types").then((t) => {
-    console.log("get_types exitoso");
+  await axios.get(BACKEND_URL() + "/types").then((t) => {
     store.dispatch(setTypes(t.data)); //en data esta el objeto!!
   });
 
@@ -31,7 +27,6 @@ async function refresh() {
   Promise.all(arrayPromises).then((arrayPromisesResueltas) => {
     arrayPromisesResueltas.forEach((e) => {
       store.dispatch(addPokemons(e.data.docePokemonos)); //en data esta el objeto!!
-      console.log("get pokemons exitoso", e.data.docePokemonos);
     });
   });
 }

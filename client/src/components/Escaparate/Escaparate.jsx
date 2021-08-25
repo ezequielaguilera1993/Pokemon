@@ -1,8 +1,8 @@
 import React, { Component, useState, useEffect } from "react"; //esto
 import { connect } from "react-redux"; //y esto para conectarlo con redux
 import Tarjeta from "./Tarjeta/Tarjeta";
-import styles from "./Escaparate.module.css"; //hoja de estilos
-import { BACKEND_URL } from "../../util";
+import styles from "./Escaparate.module.css";
+
 let once = 1;
 
 function Escaparate({ toShowPokes, punteros }) {

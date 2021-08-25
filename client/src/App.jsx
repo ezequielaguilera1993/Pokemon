@@ -15,17 +15,7 @@ import { render } from "react-dom";
 import styles from "./App.module.css";
 import { Nav } from "./components/Nav/Nav";
 
-import Particles from "react-tsparticles";
-
 function App() {
-  function particlesInit(main) {
-    console.log(main);
-  }
-
-  function particlesLoaded(container) {
-    console.log(container);
-  }
-
   return (
     <Provider store={store}>
       <React.Fragment>
