@@ -4,7 +4,7 @@
 export const BACKEND_URL = function () {
 
     return (
-        process.env.REACT_APP_LOCAL_HOST ? process.env.REACT_APP_LOCAL_HOST
+        process.env.REACT_APP_REMOTE_BACKEND ? process.env.REACT_APP_REMOTE_BACKEND
             :
             "http://localhost:3001"
     )

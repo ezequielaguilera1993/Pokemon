@@ -9,6 +9,7 @@ import { BACKEND_URL } from "../../util";
 const axios = require("axios").default; //para no tener que esta accediendo al default tood el tiempo
 
 async function refresh() {
+  console.log(BACKEND_URL() + "/pokemons");
   /////REFRESH///////
   await axios.put(BACKEND_URL() + "/pokemons").then((e) => {
     console.log("refresh de db exitoso");
