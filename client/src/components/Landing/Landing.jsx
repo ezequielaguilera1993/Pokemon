@@ -4,19 +4,20 @@ import store from "../../store";
 import { setTypes, addPokemons, process } from "../../actions"; //actions
 import { connect } from "react-redux"; //y esto para conectarlo con redux
 import Style from "./Landing.module.css"; //hoja de estilos
+import { BACKEND_URL } from "../../util";
 
 const axios = require("axios").default; //para no tener que esta accediendo al default tood el tiempo
 
 async function refresh() {
   /////REFRESH///////
-  await axios.put("http://localhost:3001/pokemons").then((e) => {
+  await axios.put(BACKEND_URL() + "/pokemons").then((e) => {
     console.log("refresh de db exitoso");
   });
   //
 
   //CUANDO ESTOS DOS SE VALORIZAN, RECIEN AHI APARECE EL BOTON
   /////GET_TYPES/////
-  axios.get("http://localhost:3001/types").then((t) => {
+  axios.get(BACKEND_URL() + "/types").then((t) => {
     console.log("get_types exitoso");
     store.dispatch(setTypes(t.data)); //en data esta el objeto!!
   });
@@ -24,7 +25,7 @@ async function refresh() {
   //ADD_POKES, TRAE DE A 12 POKEMONS //cuando llega a 40 y el types se carga habilita la pagina
   let arrayPromises = [];
   for (let i = 1; i <= 4; i++) {
-    arrayPromises.push(axios.get("http://localhost:3001/pokemons"));
+    arrayPromises.push(axios.get(BACKEND_URL() + "/pokemons"));
   }
   Promise.all(arrayPromises).then((arrayPromisesResueltas) => {
     arrayPromisesResueltas.forEach((e) => {

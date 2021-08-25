@@ -1,5 +1,18 @@
 
 
+
+export const BACKEND_URL = function () {
+
+    return (
+        process.env.REACT_APP_LOCAL_HOST ? process.env.REACT_APP_LOCAL_HOST
+            :
+            "http://localhost:3001"
+    )
+
+}
+
+
+
 export const capitalCase = function (e) {
 
     //Para arrays
@@ -11,5 +24,7 @@ export const capitalCase = function (e) {
     return "DATO INVALIDO"
 
 }
+
+
 
 
