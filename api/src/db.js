@@ -2,10 +2,9 @@
 
 require('dotenv').config();//tiene que ver con variables de entorno
 const { Sequelize } = require('sequelize');//IMPORTA el sequelize para manejar tu database
-
-
 const fs = require('fs');//para buscar en carpetas
 const path = require('path');//el path para buscar
+
 const {
   DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL
 } = process.env; //variables arbitrarias para acceder a la base de dat
@@ -17,6 +16,12 @@ if (DATABASE_URL) {
   sequelize = new Sequelize(DATABASE_URL, {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    },
   });
 
 }

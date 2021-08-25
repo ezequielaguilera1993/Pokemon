@@ -33,7 +33,5 @@ conn.sync({ force: true }).then(() => { //primero borra las tablas, y despues se
 
   server.listen(PORT, () => { //en el 3000 va a correr react! EN EL 3001 CORRE EL BACK!
     console.log('~ Listening port: ' + PORT + " ~"); // eslint-disable-line no-console
-
-
   });
 });
