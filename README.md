@@ -25,7 +25,7 @@ Puede ver un listado de pokemons, buscar uno en específico, ordenarlos, filtrar
 
 
 **• Captura**
-![](https://i.imgur.com/ceORcli.jpg)
+![](https://i.imgur.com/SFIKQKM.jpg)
 
 ------------
 
