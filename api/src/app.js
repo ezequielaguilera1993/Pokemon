@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');//sirve para registro y seguimiento de solicitudes HTTP
 const routes = require('./routes/index.js');
-const { PROCESS } = require('../../client/src/actions/names.js');
 
 require('./db.js');
 
