@@ -26,14 +26,14 @@ const dotenv = require("dotenv");
 dotenv.config()
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => { //primero borra las tablas, y despues se pone a escuchar al server
-  // console.log(conn.models)// : { Pokemon: pokemon }
+// conn.sync({ force: true }).then(() => { //primero borra las tablas, y despues se pone a escuchar al server
+// console.log(conn.models)// : { Pokemon: pokemon }
 
-  const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001
 
-  server.listen(PORT, () => { //en el 3000 va a correr react! EN EL 3001 CORRE EL BACK!
-    console.log('~ Listening port: ' + PORT + " ~"); // eslint-disable-line no-console
+server.listen(PORT, () => { //en el 3000 va a correr react! EN EL 3001 CORRE EL BACK!
+  console.log('~ Listening port: ' + PORT + " ~"); // eslint-disable-line no-console
 
 
-  });
+  // });
 });
