@@ -14,9 +14,8 @@ function Tarjeta({ name, types, imagen, fuerza, id, idPokemonCreado }) {
         <img
           id={Styles.img}
           src={imagen}
-          height="74%"
           width="100%"
-          style={{ objectFit: "contain" }}
+          // style={{ objectFit: "fill" }}
         />
       </Link>
     ) : (

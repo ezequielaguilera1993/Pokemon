@@ -42,7 +42,7 @@ function PokeDetalle({ pokeDetalle, setPokeDetalle, match }) {
             {Object.entries(pokeDetalle).map((e) => {
               let clave = e[0];
               let valor = e[1];
-              return !"id/name/types/imagen".includes(clave) ? (
+              return !"id/name/types/imagen/idPokemonCreado".includes(clave) ? (
                 <div key={clave}>
                   {"✨"}
                   {clave === "name"
