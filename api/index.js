@@ -18,7 +18,7 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+//
 //ACA JUNTA TODO LO DEL BACKEND. 
 const server = require('./src/app.js'); //BACKEND
 const { conn, Pokemon, Types } = require('./src/db.js');//conn ===sequelize
