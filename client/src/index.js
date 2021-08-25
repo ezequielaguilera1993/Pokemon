@@ -5,8 +5,6 @@ import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'; //este es el wrapper!
 
-console.log(process.env.REACT_APP_LOCAL_HOST)
-
 
 ReactDOM.render(
   <BrowserRouter>
