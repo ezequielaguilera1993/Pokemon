@@ -7,15 +7,28 @@ const { Sequelize } = require('sequelize');//IMPORTA el sequelize para manejar t
 const fs = require('fs');//para buscar en carpetas
 const path = require('path');//el path para buscar
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_USER, DB_PASSWORD, DB_HOST, DATABASE_URL
 } = process.env; //variables arbitrarias para acceder a la base de dat
 
+let sequelize;
 
-//crea el sequelize
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+if (DATABASE_URL) {
+  //crea el sequelize con la base de datos remota
+  sequelize = new Sequelize(DATABASE_URL, {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  });
+
+}
+
+else {
+  //crea el sequelize
+  sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  });
+
+}
 
 
 
@@ -57,11 +70,11 @@ path.join('foo', {}, 'bar');
 // console.log(path.join(__dirname, '/models'))
 
 //console.log(fs.readdirSync(path.join(__dirname, '/models')))//////[ 'Pokemon.js' ]
-  
+
 
 fs.readdirSync(path.join(__dirname, '/models'))//esto genera un array con los nombres de lo que este en models, al principio [ 'Pokemon.js' ]
 
-  .filter((file) => ( file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js') )//filta modificando el array, los archivos que tegan un punto en el cero, que se llamen como el nombre de este archivo .db (el path entero) y que no terminen en ".js"
+  .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))//filta modificando el array, los archivos que tegan un punto en el cero, que se llamen como el nombre de este archivo .db (el path entero) y que no terminen en ".js"
 
   .forEach((file) => {//pushe en mode definers
     modelDefiners.push(require(path.join(__dirname, '/models', file))); //hasta modelDefiners es un array con las funciones de los models importadas
@@ -96,8 +109,8 @@ const { Pokemon, Types } = sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
-Pokemon.belongsToMany(Types, {through: 'Pokemon_Types'})
-Types.belongsToMany(Pokemon, {through: 'Pokemon_Types'})
+Pokemon.belongsToMany(Types, { through: 'Pokemon_Types' })
+Types.belongsToMany(Pokemon, { through: 'Pokemon_Types' })
 
 
 
